@@ -22,6 +22,7 @@ void BOBbot::disp_pos(){
 void BOBbot::disp_direction(){
   std::cout<<"Direction_ x = " << direction.x<<"  y="<<direction.y<<std::endl;
   double p = 3.1415926;
-  std::cout<<"New Direction: "<<direction.rotation(p).x<<"  "<<direction.rotation(p).y <<std::endl;
+  direction.rotation(p)
+  std::cout<<"New Direction_ x = " << direction.x<<"  y="<<direction.y<<std::endl;
 
 }
