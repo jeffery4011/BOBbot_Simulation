@@ -2,7 +2,6 @@
 #define __v2_h__
 
 
-namespace BOBbot{
 class v2
 {
 public:
@@ -15,5 +14,5 @@ public:
 	void normalize();
 
 };
-}
+
 #endif
