@@ -4,8 +4,10 @@
 class BOBbot
 {
 public:
+    BOBbot();
 	v2 position;
-    // float angle;
+    float angle;
+
 	
 	// void Initialize();
 
