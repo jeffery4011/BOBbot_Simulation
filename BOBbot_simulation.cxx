@@ -5,6 +5,6 @@
 int main(int argc, char* argv[])
 {
   BOBbot particle;
-  particle::Initialize();
+  particle.Initialize();
   return 0;
 }
