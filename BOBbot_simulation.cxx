@@ -6,7 +6,7 @@
 
 int main(int argc, char* argv[])
 {
-  int n = 0
+  int n = 0;
     if (argc < 2) {
     // TODO 12: Create a print statement using Tutorial_VERSION_MAJOR
     //          and Tutorial_VERSION_MINOR
