@@ -32,3 +32,7 @@ v2 v2::product(double f){
     
     return v2(f*x,f*y);
 }
+
+v2 v2::sum(v2 v){
+    return v2(x+v.x,y+v.y);
+}

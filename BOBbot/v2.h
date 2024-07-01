@@ -15,6 +15,7 @@ public:
 	v2 denominate(float d);
 	double dot(v2 vector);
 	v2 product(double f);
+	v2 sum(v2 v);
 
 };
 
