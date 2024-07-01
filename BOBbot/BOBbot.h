@@ -10,6 +10,7 @@ public:
     // float angle;
 
 	void disp_pos();
+    void disp_direction();
 	// void Initialize();
 
 };

@@ -16,3 +16,8 @@ void BOBbot::disp_pos(){
   std::cout<<"Position_ x = " << position.x<<"  y="<<position.y<<std::endl;
 
 }
+
+void BOBbot::disp_direction(){
+  std::cout<<"Direction_ x = " << direction.x<<"  y="<<direction.y<<std::endl;
+
+}
