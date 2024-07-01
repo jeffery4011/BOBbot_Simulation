@@ -1,6 +1,7 @@
 #include "v2.h"
 #include "randomize.h"
 #include <math.h>
+#include <cmath>
 
 
 v2::v2()
@@ -35,4 +36,12 @@ v2 v2::product(double f){
 
 v2 v2::sum(v2 v){
     return v2(x+v.x,y+v.y);
+}
+
+void v2::rotation(double angle){
+    // Rotation in radius
+    float x = v2.x;
+    float y = v2.y;
+    v2.x = cos(angle)*x+sin(angle)*y;
+    v2.y = -sin(angle)*x+cos(angle)*y;
 }
