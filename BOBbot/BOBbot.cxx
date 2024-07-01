@@ -8,7 +8,7 @@
 
 void BOBbot::Initialize(){
  v2 pos;
- pos= v2::randomize();
+ pos::randomize();
  float x = pos.x;
  float y = pos.y;
  std::cout << "BOBbot Position x: " << x << " y:" << y << std::endl;
