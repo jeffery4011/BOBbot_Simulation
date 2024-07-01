@@ -7,7 +7,7 @@
 
 
 void BOBbot::Initialize(){
- v2 pos;
+ v2 *pos;
  pos::randomize();
  float x = pos.x;
  float y = pos.y;
