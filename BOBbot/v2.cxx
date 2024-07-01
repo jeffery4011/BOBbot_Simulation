@@ -24,6 +24,6 @@ v2 v2::denominate(float d){
 double v2::dot(v2 vector){
     double s = 0;
     s +=  x*vector.x;
-    s + = y*vector.y;
+    s +=  y*vector.y;
     return s;
 }
