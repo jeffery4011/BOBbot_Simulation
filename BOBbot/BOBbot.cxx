@@ -13,9 +13,8 @@ BOBbot::BOBbot():position(),direction()
 
 void BOBbot::disp_pos(){
   std::cout<<"Position_ x = " << position.x<<"  y="<<position.y<<std::endl;
-  std::cout<<"After Denomination"<<std::endl;
-  v2 p = position.denominate(50);
-  std::cout<<"Position_ x = " << p.x<<"  y="<<p.y<<std::endl;
+  p = v2(1,1);
+  std::cout<<"Dot Product: "<<position.dot(p)<<std::endl;
 
 }
 

@@ -20,3 +20,10 @@ void v2::normalize()
 v2 v2::denominate(float d){
     return v2(x/d,y/d);
 }
+
+double v2::dot(v2 vector){
+    double s = 0;
+    s +=  x*vector.x;
+    s + = y*vector.y;
+    return s;
+}

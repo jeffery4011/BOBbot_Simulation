@@ -13,6 +13,7 @@ public:
 	void randomize();
 	void normalize();
 	v2 denominate(float d);
+	double dot(v2 vector);
 
 };
 
