@@ -3,8 +3,8 @@
 class BOBbot
 {
 public:
-	v2 position();
-    float angle;
+	v2 position;
+    // float angle;
 	
 	// void Initialize();
 
