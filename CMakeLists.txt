@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 
-add_subdirectory(BOBbot)
+# add_subdirectory(BOBbot)
 
 
 # TODO 2: Use add_subdirectory() to add MathFunctions to this project
