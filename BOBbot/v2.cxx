@@ -42,6 +42,6 @@ void v2::rotation(double angle){
     // Rotation in radius
     float X = x;
     float Y = y;
-    v2.x = cos(angle)*X+sin(angle)*Y;
-    v2.y = -sin(angle)*X+cos(angle)*Y;
+    x = cos(angle)*X+sin(angle)*Y;
+    y = -sin(angle)*X+cos(angle)*Y;
 }
