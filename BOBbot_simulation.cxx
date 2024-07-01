@@ -9,8 +9,8 @@ int main(int argc, char* argv[])
   if (argc <2){
     const int n = 10;
   }
-  // const int n = 10;
-  int n = std::stoi(argv[1]);
+  const int n = 10;
+  // int n = std::stoi(argv[1]);
   BOBbot * pArray = new BOBbot[n];
   for (int i =0;i<n;i++){
     pArray[i].disp_pos();
