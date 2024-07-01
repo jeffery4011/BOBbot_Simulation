@@ -5,10 +5,10 @@
 #include <cmath>
 #include <iostream>
 
-BOBbot::BOBbot(): 
+BOBbot::BOBbot(): position(),direction()
 {
-  position();
-  angle=0;
+  // position();
+  // angle=0;
 }
 
 

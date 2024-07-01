@@ -6,7 +6,8 @@ class BOBbot
 public:
     BOBbot();
 	v2 position;
-    float angle;
+    v2 direction;
+    // float angle;
 
 	
 	// void Initialize();
