@@ -13,6 +13,6 @@ BOBbot::BOBbot(): position(),direction()
 
 
 void BOBbot::disp_pos(){
-  cout<<"Position_ x = " << position.x<<"  y="<<position.y<<endl;
+  std::cout<<"Position_ x = " << position.x<<"  y="<<position.y<<std::endl;
 
 }
