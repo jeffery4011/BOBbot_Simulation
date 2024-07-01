@@ -12,12 +12,13 @@ int main(int argc, char* argv[])
     // std::cout << argv[0] << " Version " << Tutorial_VERSION_MAJOR << "."
     //           << Tutorial_VERSION_MINOR << std::endl;
     // std::cout << "Usage: " << argv[0] << " number" << std::endl;
-    return 1;
+    const int n = 10;
   }
 
   // convert input to double
   // TODO 4: Replace atof(argv[1]) with std::stod(argv[1])
   const double inputValue = std::stod(argv[1]);
+  const int n = (int)inputValue;
   // if (argc <2){
   //   const double n = 10;
   // }
