@@ -13,7 +13,7 @@ BOBbot::BOBbot():position(),direction()
 
 void BOBbot::disp_pos(){
   std::cout<<"Position_ x = " << position.x<<"  y="<<position.y<<std::endl;
-  p = v2(1,1);
+  v2 p(1,1);
   std::cout<<"Dot Product: "<<position.dot(p)<<std::endl;
 
 }
