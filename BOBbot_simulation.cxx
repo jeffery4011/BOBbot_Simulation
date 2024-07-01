@@ -14,25 +14,22 @@ int main(int argc, char* argv[])
     //           << Tutorial_VERSION_MINOR << std::endl;
     // std::cout << "Usage: " << argv[0] << " number" << std::endl;
     n = 10;
-    return 1;
+  }
+  else{
+    const int inputValue = std::stoi(argv[1]);
+    n = inputValue;
+
   }
 
   // convert input to double
   // TODO 4: Replace atof(argv[1]) with std::stod(argv[1])
-  const int inputValue = std::stoi(argv[1]);
-  // const int n = (int)inputValue;
-  // if (argc <2){
-  //   const double n = 10;
-  // }
-  // // const int n = 10;
-  // double n = std::stoi(argv[1]);
-  // int index_max = (int) n;
-  // BOBbot * pArray = new BOBbot[index_max];
-  // for (int i =0;i<index_max;i++){
-  //   pArray[i].disp_pos();
-  //   pArray[i].disp_direction();
+  
+  BOBbot * pArray = new BOBbot[index_max];
+  for (int i =0;i<index_max;i++){
+    pArray[i].disp_pos();
+    pArray[i].disp_direction();
 
-  // }
+  }
   
   
   return 0;
