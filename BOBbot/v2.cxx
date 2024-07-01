@@ -40,8 +40,8 @@ v2 v2::sum(v2 v){
 
 void v2::rotation(double angle){
     // Rotation in radius
-    float x = v2.x;
-    float y = v2.y;
-    v2.x = cos(angle)*x+sin(angle)*y;
-    v2.y = -sin(angle)*x+cos(angle)*y;
+    float X = x;
+    float Y = y;
+    v2.x = cos(angle)*X+sin(angle)*Y;
+    v2.y = -sin(angle)*X+cos(angle)*Y;
 }
