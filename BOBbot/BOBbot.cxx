@@ -7,13 +7,15 @@
 
 BOBbot::BOBbot():position(),direction()
 {
-  position.denominate(50);
   direction.normalize();
 }
 
 
 void BOBbot::disp_pos(){
   std::cout<<"Position_ x = " << position.x<<"  y="<<position.y<<std::endl;
+  std::cout<<"After Denomination"<<std::endl;
+  v2 p = position.denominate(50);
+  std::cout<<"Position_ x = " << p.x<<"  y="<<p.y<<std::endl;
 
 }
 
