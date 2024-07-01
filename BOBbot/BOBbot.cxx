@@ -5,7 +5,7 @@
 #include <cmath>
 #include <iostream>
 
-BOBbot::BOBbot():
+BOBbot::BOBbot()
 {
   position();
   direction();
