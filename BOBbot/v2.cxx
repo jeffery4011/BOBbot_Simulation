@@ -17,3 +17,6 @@ void v2::normalize()
 	x /= t;
 	y /= t;
 }
+v2 v2::denominate(float d){
+    return v2(x/d,y/d);
+}

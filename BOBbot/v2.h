@@ -12,6 +12,7 @@ public:
 	v2(float xIn, float yIn);
 	void randomize();
 	void normalize();
+	v2 denominate(float d);
 
 };
 

@@ -7,6 +7,7 @@
 
 BOBbot::BOBbot():position(),direction()
 {
+  position.denominate(50);
   direction.normalize();
 }
 
