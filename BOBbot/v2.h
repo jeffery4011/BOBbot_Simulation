@@ -9,7 +9,7 @@ public:
 	float y;
 	
 	v2();
-	v2(float xIn, float yIn, float zIn);
+	v2(float xIn, float yIn);
 	void randomize();
 	void normalize();
 
