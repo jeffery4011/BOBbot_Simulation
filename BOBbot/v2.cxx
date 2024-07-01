@@ -27,3 +27,8 @@ double v2::dot(v2 vector){
     s +=  y*vector.y;
     return s;
 }
+
+v2 v2::product(double f){
+    
+    return v2(f*x,f*y);
+}

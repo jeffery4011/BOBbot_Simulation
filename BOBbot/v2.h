@@ -14,6 +14,7 @@ public:
 	void normalize();
 	v2 denominate(float d);
 	double dot(v2 vector);
+	v2 product(double f);
 
 };
 
