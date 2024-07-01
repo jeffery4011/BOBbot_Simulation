@@ -1,5 +1,12 @@
 #pragma once
 
-namespace BOBbot{
-double sqrt(double x);
-}
+class BOBbot
+{
+public:
+	float x;
+	float y;
+    float angle;
+	
+	void Initialize();
+
+};
