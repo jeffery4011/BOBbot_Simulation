@@ -3,13 +3,14 @@
 #include "randomize.h"
 // TODO 11: include cmath
 #include <cmath>
+#include <iostream>
 
 
 void BOBbot::Initialize(){
  v2 pos;
- pos= v2.randomize();
- x = pos[0];
- y = pos[1];
+ pos= v2::randomize();
+ float x = pos.x;
+ float y = pos.y;
  std::cout << "BOBbot Position x: " << x << " y:" << y << std::endl;
 
 }
