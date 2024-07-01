@@ -24,8 +24,8 @@ int main(int argc, char* argv[])
   // convert input to double
   // TODO 4: Replace atof(argv[1]) with std::stod(argv[1])
   
-  BOBbot * pArray = new BOBbot[index_max];
-  for (int i =0;i<index_max;i++){
+  BOBbot * pArray = new BOBbot[n];
+  for (int i =0;i<n;i++){
     pArray[i].disp_pos();
     pArray[i].disp_direction();
 
