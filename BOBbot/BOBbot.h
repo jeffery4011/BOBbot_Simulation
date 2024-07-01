@@ -9,7 +9,7 @@ public:
     v2 direction;
     // float angle;
 
-	
+	disp_pos();
 	// void Initialize();
 
 };

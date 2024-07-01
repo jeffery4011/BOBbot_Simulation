@@ -7,6 +7,6 @@
 int main(int argc, char* argv[])
 {
   BOBbot particle;
-//   particle.Initialize();
+  particle.disp_pos();
   return 0;
 }
