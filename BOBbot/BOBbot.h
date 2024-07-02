@@ -20,6 +20,8 @@ public:
 	void disp_pos();
     void disp_direction();
     void disp_External_Force();
+    void disp_External_Torque();
+    void disp_sum_External_Force();
     void apply_external_force(v2 pos,v2 Force);
 	// void Initialize();
 

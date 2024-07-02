@@ -33,6 +33,16 @@ void BOBbot::disp_External_Force(){
 
 }
 
+void BOBbot::disp_External_Torque(){
+  std::cout<<"External_Torque = " << External_Torque<<std::endl;
+
+}
+
+void BOBbot::disp_sum_External_Force(){
+  std::cout<<"SUM_External_Force = " << sum_External_Force<<std::endl;
+
+}
+
 void BOBbot::apply_external_force(v2 pos, v2 Force){
   v2 radius = position.minus(pos);
   v2 distance = pos.minus(position);
