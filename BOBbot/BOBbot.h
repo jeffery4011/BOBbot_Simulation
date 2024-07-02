@@ -5,9 +5,9 @@ class BOBbot
 {
 
 private:
-    double mass = 0.2 //kg
+    double mass = 0.151 //kg
     double radius = 0.04 // m
-    double inertia =
+    double inertia = 0.5*mass*radius*radius
 public:
     BOBbot();
 	v2 position;
