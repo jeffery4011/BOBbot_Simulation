@@ -3,6 +3,7 @@
 #include <string>
 #include "BOBbot.h"
 #include "v2.h"
+#include "contact.h"
 
 int main(int argc, char* argv[])
 {
@@ -27,7 +28,7 @@ int main(int argc, char* argv[])
   BOBbot * BOBbotArray = new BOBbot[n];
   for (int i =0;i<n;i++){
     BOBbotArray[i].disp_pos();
-    BOBbotArray[i].disp_External_Force();
+    // BOBbotArray[i].disp_External_Force();
     v2 Force;
     Force.normalize();
     std::cout<<"Applied Force: "<<Force.x<<" , "<<Force.y<<std::endl;
@@ -38,8 +39,9 @@ int main(int argc, char* argv[])
     BOBbotArray[i].apply_external_force(Force_position,Force);
 
 
+
   }
-  
+  std::cout<< Contact(BOBbotArray[0],BOBbotArray[1])<<std::endl;
   
   return 0;
 }
