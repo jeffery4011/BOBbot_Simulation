@@ -28,7 +28,7 @@ int main(int argc, char* argv[])
     bool place_success = 0;
     while (! place_success){
         for(int contact_index = 0;contact_index<place_index;contact_index++){
-          if contact(BOBbotArray[contact_index],BOBbotArray[place_index]){
+          if (contact(BOBbotArray[contact_index],BOBbotArray[place_index])){
             num_of_try++;
             break;
           }
