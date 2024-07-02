@@ -28,9 +28,11 @@ int main(int argc, char* argv[])
   for (int i =0;i<n;i++){
     BOBbotArray[i].disp_pos();
     BOBbotArray[i].disp_External_Force();
-    v2 Force();
+    v2 Force;
+    Force();
     Force.normalize();
-    v2 Force_position();
+    v2 Force_position;
+    Force_position();
     Force_position.normalize();
     Force_position.product(BOBbotArray[i].radius);
     Force_position.sum(BOBbotArray[i].position);
