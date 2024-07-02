@@ -30,8 +30,9 @@ void BOBbot::disp_direction(){
 
 void BOBbot::disp_External_Force(){
   std::cout<<"External_Force_ x = " << External_Force.x<<"  y="<<External_Force.y<<std::endl;
-  // float p=0.2;
-  // double p = 3.1415926;
-  // std::cout<<"Product: "<<position.sum(p).x<<"  "<<position.sum(p).y <<std::endl;
 
+}
+
+void BOBbot::apply_external_force(v2 pos, v2 Force){
+  sum_External_Force = 0;
 }

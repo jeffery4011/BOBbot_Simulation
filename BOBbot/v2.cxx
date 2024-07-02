@@ -18,6 +18,11 @@ void v2::normalize()
 	x /= t;
 	y /= t;
 }
+
+double v2::norm()
+{
+    return sqrt(x*x + y*y);
+}
 v2 v2::denominate(float d){
     return v2(x/d,y/d);
 }

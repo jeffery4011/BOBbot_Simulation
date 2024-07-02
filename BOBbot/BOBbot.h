@@ -13,13 +13,14 @@ public:
 	v2 position;
     v2 direction;
     v2 External_Force;
-    double sum_External_Force;
-    float External_Torque = 0;
+    double sum_External_Force =0;
+    double External_Torque = 0;
     // float angle;
 
 	void disp_pos();
     void disp_direction();
     void disp_External_Force();
+    void apply_external_force(v2 pos,v2 Force);
 	// void Initialize();
 
 };
