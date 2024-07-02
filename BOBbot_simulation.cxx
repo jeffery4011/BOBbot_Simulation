@@ -29,20 +29,14 @@ int main(int argc, char* argv[])
     BOBbotArray[i].disp_pos();
     BOBbotArray[i].disp_External_Force();
     v2 Force;
-    // Force();
     Force.normalize();
     std::cout<<"Applied Force: "<<Force.x<<" , "<<Force.y<<std::endl;
     v2 Force_position;
-    // Force_position();
     Force_position.normalize();
     Force_position= Force_position.product(BOBbotArray[i].radius);
     Force_position= Force_position.sum(BOBbotArray[i].position);
     BOBbotArray[i].apply_external_force(Force_position,Force);
-    BOBbotArray[i].disp_External_Force();
-    std::cout<<"Collision_Force = " << BOBbotArray[i].External_Force.norm()<<std::endl;
-    std::cout<<"Rotation_Force = " << (Force.minus(BOBbotArray[i].External_Force)).norm()<<std::endl;
-    BOBbotArray[i].disp_sum_External_Force();
-    BOBbotArray[i].disp_External_Torque();
+
 
   }
   
