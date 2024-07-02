@@ -35,6 +35,7 @@ int main(int argc, char* argv[])
         
           if (contact(BOBbotArray[contact_index],BOBbotArray[place_index])){
             num_of_try++;
+            BOBbotArray[place_index] = BOBbot();
             break;
           }
           contact_index++;
