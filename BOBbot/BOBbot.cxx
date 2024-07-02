@@ -45,6 +45,7 @@ void BOBbot::disp_sum_External_Force(){
 
 void BOBbot::apply_external_force(v2 pos, v2 Force){
   v2 radius = position.minus(pos);
+  std::cout<<"Radius = " << radius.norm()<<std::endl;
   v2 distance = pos.minus(position);
   distance.normalize();
   sum_External_Force += Force.norm();
