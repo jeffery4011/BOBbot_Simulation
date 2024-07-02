@@ -60,8 +60,8 @@ int main(int argc, char* argv[])
   for (int i =0;i<n;i++){
     BOBbotArray[i].disp_pos();
     myfile.open("position.txt");
-    myfile<<BOBbotArray[i].position.x<<" "<<BOBbotArray[i].position.y<<"\n";
-    
+    myfile<<BOBbotArray[i].position.x<<" "<<BOBbotArray[i].position.y<<std::endl;
+    myfile.close();
     // BOBbotArray[i].disp_External_Force();
     v2 Force;
     Force.normalize();
@@ -76,6 +76,6 @@ int main(int argc, char* argv[])
 
   }
   std::cout<< contact(BOBbotArray[0],BOBbotArray[1])<<std::endl;
-  myfile.close();
+  
   return 0;
 }
