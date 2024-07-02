@@ -1,1 +1,2 @@
 add_library(ContactLibrary STATIC contact.cxx)
+target_link_libraries(ContactLibrary PRIVATE BOBbot)
