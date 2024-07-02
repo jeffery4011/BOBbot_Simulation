@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
   
   
   //Check Overlapping
-  int max_num_of_try = 1000;
+  int max_num_of_try = 10000;
   int place_index = 1;
   int num_of_try = 0;
   while (place_index <n){
