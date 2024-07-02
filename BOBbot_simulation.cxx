@@ -24,9 +24,11 @@ int main(int argc, char* argv[])
   int place_index = 1;
   int num_of_try = 0;
   while (place_index <n){
+    std::cout<<"Placing "<<place_index<<"th BOBbot"<<std::endl;
     num_of_try = 0;
     bool place_success = 0;
     while (! place_success){
+      std::cout<<"Try "<<num_of_try<<"th time"<<std::endl;
       int contact_index = 0;
         for(int contact_index = 0;contact_index<place_index;contact_index++){
           if (contact(BOBbotArray[contact_index],BOBbotArray[place_index])){
