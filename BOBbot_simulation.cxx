@@ -31,6 +31,7 @@ int main(int argc, char* argv[])
     v2 Force;
     // Force();
     Force.normalize();
+    std::cout<<"Applied Force: "<<Force.x<<" , "<<Force.y<<std::endl;
     v2 Force_position;
     // Force_position();
     Force_position.normalize();
