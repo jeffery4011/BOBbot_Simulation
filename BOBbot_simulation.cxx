@@ -53,7 +53,7 @@ int main(int argc, char* argv[])
 
   //End of Check Overlapping
 
-  ofstream myfile;
+  std::ofstream myfile;
   
   
   
