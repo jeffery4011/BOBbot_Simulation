@@ -30,12 +30,15 @@ int main(int argc, char* argv[])
     while (! place_success){
       std::cout<<"Try "<<num_of_try<<"th time"<<std::endl;
       int contact_index = 0;
-        for(int contact_index = 0;contact_index<place_index;contact_index++){
+        while (contact_index<place_index){
+        
           if (contact(BOBbotArray[contact_index],BOBbotArray[place_index])){
             num_of_try++;
             break;
           }
+          contact_index++;
         }
+        
         if (contact_index == place_index){
           place_success =1;
         }
