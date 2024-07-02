@@ -3,7 +3,7 @@
 namespace {
   std::random_device randDevice;
   std::minstd_rand engine(randDevice());
-  std::normal_distribution<float> normalDist(0, 0.8);
+  std::uniform_real_distribution<float> normalDist(-0.2, 0.2);
 }
 
 void randomize(float& x, float& y)
