@@ -38,6 +38,7 @@ int main(int argc, char* argv[])
     Force_position.sum(BOBbotArray[i].position);
     BOBbotArray[i].apply_external_force(Force_position,Force_position);
     BOBbotArray[i].disp_External_Force();
+    std::cout<<"Collision_Force = " << BOBbotArray[i]External_Force.norm()<<std::endl;
     BOBbotArray[i].disp_sum_External_Force();
     BOBbotArray[i].disp_External_Torque();
 
