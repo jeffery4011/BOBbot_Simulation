@@ -1,5 +1,6 @@
 #include <cmath>
 #include <iostream>
+#include <fstream>
 #include <string>
 #include "BOBbot.h"
 #include "v2.h"
@@ -52,12 +53,15 @@ int main(int argc, char* argv[])
 
   //End of Check Overlapping
 
-  
+  ofstream myfile;
   
   
   
   for (int i =0;i<n;i++){
     BOBbotArray[i].disp_pos();
+    myfile.open("position.txt");
+    myfile<<BOBbotArray[i].position.x<<" "<<BOBbotArray[i].position.y<<"\n";
+    myfile.close();
     // BOBbotArray[i].disp_External_Force();
     v2 Force;
     Force.normalize();
