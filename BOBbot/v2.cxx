@@ -38,10 +38,19 @@ v2 v2::sum(v2 v){
     return v2(x+v.x,y+v.y);
 }
 
+v2 v2::minus(v2 v){
+    return v2(x-v.x,y-v.y);
+}
+
+
 void v2::rotation(double angle){
     // Rotation in radius
     float X = x;
     float Y = y;
     x = cos(angle)*X+sin(angle)*Y;
     y = -sin(angle)*X+cos(angle)*Y;
+}
+
+double v2::cross(v2 v){
+    return x*v.y-v.x*y;
 }

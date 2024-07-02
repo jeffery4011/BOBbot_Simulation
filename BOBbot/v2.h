@@ -16,7 +16,9 @@ public:
 	double dot(v2 vector);
 	v2 product(double f);
 	v2 sum(v2 v);
+	v2 minus(v2 v);
 	void rotation(double angle);
+	double cross(v2 v);
 
 };
 
