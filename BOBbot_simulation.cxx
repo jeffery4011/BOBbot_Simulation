@@ -47,6 +47,7 @@ int main(int argc, char* argv[])
           return 0;
         }
     }
+    place_index++;
   }std::cout<<"All Robots have been placed!"<<std::endl;
 
   //End of Check Overlapping
