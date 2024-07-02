@@ -6,7 +6,7 @@ class BOBbot
 
 private:
     double mass = 0.151; //kg
-    double radius = 0.04; // m
+    
     double inertia = 0.5*mass*radius*radius;
 public:
     BOBbot();
@@ -16,7 +16,7 @@ public:
     double sum_External_Force =0;
     double External_Torque = 0;
     // float angle;
-
+    double radius = 0.04; // m
 	void disp_pos();
     void disp_direction();
     void disp_External_Force();
