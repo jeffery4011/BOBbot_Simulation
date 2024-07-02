@@ -12,7 +12,7 @@ public:
 	v2(float xIn, float yIn);
 	void randomize();
 	void normalize();
-	void norm();
+	double norm();
 	v2 denominate(float d);
 	double dot(v2 vector);
 	v2 product(double f);
