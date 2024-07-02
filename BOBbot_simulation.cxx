@@ -41,7 +41,7 @@ int main(int argc, char* argv[])
 
 
   }
-  std::cout<< Contact(BOBbotArray[0],BOBbotArray[1])<<std::endl;
+  std::cout<< contact(BOBbotArray[0],BOBbotArray[1])<<std::endl;
   
   return 0;
 }
