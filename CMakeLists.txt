@@ -19,7 +19,7 @@ add_subdirectory(Contact)
 
 # add the executable
 add_executable(BOBbot_simulation BOBbot_simulation.cxx)
-target_link_libraries(example-app "${TORCH_LIBRARIES}")
+target_link_libraries(BOBbot_simulation "${TORCH_LIBRARIES}")
 target_link_libraries(BOBbot_simulation PUBLIC BOBbot)
 target_link_libraries(BOBbot_simulation PUBLIC ContactLibrary)
 # TODO 3: Use target_link_libraries to link the library to our executable
