@@ -5,7 +5,7 @@
 #include <cmath>
 #include <iostream>
 
-BOBbot::BOBbot():position(),direction(),External_Force(0,0)
+BOBbot::BOBbot():position(),direction(),External_Force(0,0),Internal_Force(0,0)
 {
 
   direction.normalize();

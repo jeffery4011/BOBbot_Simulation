@@ -13,6 +13,8 @@ public:
 	v2 position;
     v2 direction;
     v2 External_Force;
+    v2 Internal_Force;
+    double Internal_Torque = 0;
     double sum_External_Force =0;
     double External_Torque = 0;
     // float angle;
