@@ -1,2 +1,2 @@
 add_library(SaveData STATIC savedata.cxx)
-target_link_libraries(SaveData PRIVATE BOBbot)
+target_link_libraries(SaveData PRIVATE BOBbot "${TORCH_LIBRARIES}")
