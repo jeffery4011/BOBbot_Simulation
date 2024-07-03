@@ -5,6 +5,8 @@
 #include "BOBbot.h"
 #include "v2.h"
 #include "contact.h"
+#include "savedata.h"
+#include <torch/torch.h>
 
 int main(int argc, char* argv[])
 {
@@ -56,7 +58,7 @@ int main(int argc, char* argv[])
 
   std::ofstream myfile;
   
-  
+  savedata(BOBbotArray);
   
   for (int i =0;i<n;i++){
     BOBbotArray[i].disp_pos();
