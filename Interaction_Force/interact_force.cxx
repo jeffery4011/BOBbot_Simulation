@@ -4,10 +4,10 @@
 #include <math.h>
 #include <cmath>
 
-void External_Force_update(BOBbot *BOBbotArray, double h){
+void External_Force_update(BOBbot *BOBbotArray, double h, int Num_of_BOBbot){
     double k = 1000;
-    int Num_of_BOBbot = sizeof(BOBbotArray)/sizeof(BOBbotArray[0]);
-    std::cout<<"NUM of BOBbot  "<<sizeof(BOBbotArray)<<std::endl;
+    // int Num_of_BOBbot = sizeof(BOBbotArray)/sizeof(BOBbotArray[0]);
+    // std::cout<<"NUM of BOBbot  "<<sizeof(BOBbotArray)<<std::endl;
     for(int i =0;i<Num_of_BOBbot;i++){
         for(int j =i+1;j<Num_of_BOBbot;j++){
             v2 distance = BOBbotArray[i].position.minus(BOBbotArray[j].position);
