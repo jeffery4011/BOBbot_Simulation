@@ -6,9 +6,9 @@
 
 void Repel_Force(BOBbot BOBbotA, BOBbot BOBbotB,v2 distance, double h){
     double k = 1000;
-    double repulsive_distance = BOBbotArray[i].radius+BOBbotArray[j].radius+h-distance.norm();
+    double repulsive_distance = BOBbotA.radius+BOBbotB.radius+h-distance.norm();
     v2 direction = distance.product(1/distance.norm());
-    v2 collision_position = BOBbotArray[j].position.sum(direction.product(0.5*distance.norm()));
+    v2 collision_position = BOBbotB.position.sum(direction.product(0.5*distance.norm()));
     BOBbotA.apply_external_force(collision_position,direction.product((k*repulsive_distance)));
     BOBbotB.apply_external_force(collision_position,direction.product(-(k*repulsive_distance)));
 
