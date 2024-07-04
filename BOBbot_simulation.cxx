@@ -5,7 +5,7 @@
 #include "BOBbot.h"
 #include "v2.h"
 #include "contact.h"
-#include "inteact_force.h"
+#include "interact_force.h"
 
 int main(int argc, char* argv[])
 {
