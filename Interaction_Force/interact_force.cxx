@@ -15,7 +15,7 @@ void External_Force_update(BOBbot *BOBbotArray, double h, int Num_of_BOBbot){
             if (distance.norm()<(BOBbotArray[i].radius+BOBbotArray[j].radius+h)){
                 double repulsive_distance = BOBbotArray[i].radius+BOBbotArray[j].radius+h-distance.norm();
                 v2 direction = distance.product(1/distance.norm());
-                v2 collision_position = direction.product(0.5*distance.norm());
+                v2 collision_position = BOBbotArray[j].position.sum(direction.product(0.5*distance.norm()));
                 BOBbotArray[i].apply_external_force(collision_position,direction.product(-(k*repulsive_distance)));
                 BOBbotArray[j].apply_external_force(collision_position,direction.product(-(k*repulsive_distance)));
                 // BOBbotArray[i].disp_External_Force();
