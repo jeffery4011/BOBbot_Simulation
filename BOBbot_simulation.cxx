@@ -5,6 +5,7 @@
 #include "BOBbot.h"
 #include "v2.h"
 #include "contact.h"
+#include "inteact_force.h"
 
 int main(int argc, char* argv[])
 {
@@ -64,19 +65,26 @@ int main(int argc, char* argv[])
     myfile<<BOBbotArray[i].position.x<<" "<<BOBbotArray[i].position.y<<std::endl;
     myfile.close();
     // BOBbotArray[i].disp_External_Force();
-    v2 Force;
-    Force.normalize();
-    std::cout<<"Applied Force: "<<Force.x<<" , "<<Force.y<<std::endl;
-    v2 Force_position;
-    Force_position.normalize();
-    Force_position= Force_position.product(BOBbotArray[i].radius);
-    Force_position= Force_position.sum(BOBbotArray[i].position);
-    BOBbotArray[i].apply_external_force(Force_position,Force);
+    BOBbotArray[i].disp_External_Force();
 
 
 
   }
-  std::cout<< contact(BOBbotArray[0],BOBbotArray[1])<<std::endl;
+
+  std::cout<<"Force_Applied"<<std::endl;
+  External_Force_update(BOBbotArray,0.2);
+  for (int i =0;i<n;i++){
+    BOBbotArray[i].disp_pos();
+    myfile.open("Force.txt", std::ios_base::app);
+    myfile<<BOBbotArray[i].position.x<<" "<<BOBbotArray[i].position.y<<std::endl;
+    myfile.close();
+    // BOBbotArray[i].disp_External_Force();
+    
+    BOBbotArray[i].disp_External_Force();
+
+
+
+  }
   
   return 0;
 }
