@@ -4,7 +4,7 @@
 #include <math.h>
 #include <cmath>
 
-void External_Force_update(BOBbot &BOBbotArray, double h){
+void External_Force_update(BOBbot *BOBbotArray, double h){
     double k = 1000;
     int Num_of_BOBbot = sizeof(BOBbotArray)/sizeof(BOBbotArray[0]);
     for(int i =0;i<Num_of_BOBbot;i++){
