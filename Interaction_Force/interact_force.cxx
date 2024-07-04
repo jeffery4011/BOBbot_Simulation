@@ -4,6 +4,15 @@
 #include <math.h>
 #include <cmath>
 
+void Repel_Force(BOBbot BOBbotA, BOBbot BOBbotB,v2 distance, double h){
+    double repulsive_distance = BOBbotArray[i].radius+BOBbotArray[j].radius+h-distance.norm();
+    v2 direction = distance.product(1/distance.norm());
+    v2 collision_position = BOBbotArray[j].position.sum(direction.product(0.5*distance.norm()));
+    BOBbotA.apply_external_force(collision_position,direction.product((k*repulsive_distance)));
+    BOBbotB.apply_external_force(collision_position,direction.product(-(k*repulsive_distance)));
+
+}
+
 void External_Force_update(BOBbot *BOBbotArray, double h, int Num_of_BOBbot){
     double k = 1000;
     // int Num_of_BOBbot = sizeof(BOBbotArray)/sizeof(BOBbotArray[0]);
@@ -13,11 +22,8 @@ void External_Force_update(BOBbot *BOBbotArray, double h, int Num_of_BOBbot){
             v2 distance = BOBbotArray[i].position.minus(BOBbotArray[j].position);
             std::cout<<"Distance  "<<distance.norm()<<std::endl;
             if (distance.norm()<(BOBbotArray[i].radius+BOBbotArray[j].radius+h)){
-                double repulsive_distance = BOBbotArray[i].radius+BOBbotArray[j].radius+h-distance.norm();
-                v2 direction = distance.product(1/distance.norm());
-                v2 collision_position = BOBbotArray[j].position.sum(direction.product(0.5*distance.norm()));
-                BOBbotArray[i].apply_external_force(collision_position,direction.product((k*repulsive_distance)));
-                BOBbotArray[j].apply_external_force(collision_position,direction.product(-(k*repulsive_distance)));
+                Repel_Force(BOBbotArray[i],BOBbotArray[j],distance,h);
+                
                 // BOBbotArray[i].disp_External_Force();
                 // BOBbotArray[j].disp_External_Force();
             }
