@@ -5,6 +5,7 @@
 #include <cmath>
 
 void Repel_Force(BOBbot BOBbotA, BOBbot BOBbotB,v2 distance, double h){
+    double k = 1000;
     double repulsive_distance = BOBbotArray[i].radius+BOBbotArray[j].radius+h-distance.norm();
     v2 direction = distance.product(1/distance.norm());
     v2 collision_position = BOBbotArray[j].position.sum(direction.product(0.5*distance.norm()));
@@ -14,7 +15,7 @@ void Repel_Force(BOBbot BOBbotA, BOBbot BOBbotB,v2 distance, double h){
 }
 
 void External_Force_update(BOBbot *BOBbotArray, double h, int Num_of_BOBbot){
-    double k = 1000;
+    
     // int Num_of_BOBbot = sizeof(BOBbotArray)/sizeof(BOBbotArray[0]);
     // std::cout<<"NUM of BOBbot  "<<sizeof(BOBbotArray)<<std::endl;
     for(int i =0;i<Num_of_BOBbot;i++){
