@@ -72,11 +72,11 @@ int main(int argc, char* argv[])
   }
 
   std::cout<<"Force_Applied"<<std::endl;
-  External_Force_update(BOBbotArray,20,n);
+  External_Force_update(BOBbotArray,0.0004,n);
   for (int i =0;i<n;i++){
     BOBbotArray[i].disp_pos();
     myfile.open("Force.txt", std::ios_base::app);
-    myfile<<BOBbotArray[i].position.x<<" "<<BOBbotArray[i].position.y<<std::endl;
+    myfile<<BOBbotArray[i].position.x<<" "<<BOBbotArray[i].position.y<<"  "<<BOBbotArray[i].External_Force.x<<" "<<BOBbotArray[i].External_Force.y<<std::endl;
     myfile.close();
     // BOBbotArray[i].disp_External_Force();
     
