@@ -72,7 +72,7 @@ int main(int argc, char* argv[])
   }
 
   std::cout<<"Force_Applied"<<std::endl;
-  External_Force_update(ParticleArray,0.0004,n);
+  External_Force_update(ParticleArray,0.001,n);
   for (int i =0;i<n;i++){
     ParticleArray[i].disp_pos();
     myfile.open("Force.txt", std::ios_base::app);
