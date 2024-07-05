@@ -1,18 +1,18 @@
-#include "BOBbot.h"
+#include "Particle.h"
 #include "v2.h"
 #include "randomize.h"
 // TODO 11: include cmath
 #include <cmath>
 #include <iostream>
 
-BOBbot::BOBbot():position(),direction(),External_Force(0,0),Internal_Force(0,0)
+Particle::Particle():position(),direction(),External_Force(0,0),Internal_Force(0,0)
 {
 
   direction.normalize();
 }
 
 
-void BOBbot::disp_pos(){
+void Particle::disp_pos(){
   std::cout<<"Position_ x = " << position.x<<"  y="<<position.y<<std::endl;
   // float p=0.2;
   // double p = 3.1415926;
@@ -20,7 +20,7 @@ void BOBbot::disp_pos(){
 
 }
 
-void BOBbot::disp_direction(){
+void Particle::disp_direction(){
   std::cout<<"Direction_ x = " << direction.x<<"  y="<<direction.y<<std::endl;
   double p = 3.1415926/2;
   direction.rotation(p);
@@ -28,22 +28,22 @@ void BOBbot::disp_direction(){
 
 }
 
-void BOBbot::disp_External_Force(){
+void Particle::disp_External_Force(){
   std::cout<<"External_Force_ x = " << External_Force.x<<"  y="<<External_Force.y<<std::endl;
 
 }
 
-void BOBbot::disp_External_Torque(){
+void Particle::disp_External_Torque(){
   std::cout<<"External_Torque = " << External_Torque<<std::endl;
 
 }
 
-void BOBbot::disp_sum_External_Force(){
+void Particle::disp_sum_External_Force(){
   std::cout<<"SUM_External_Force = " << sum_External_Force<<std::endl;
 
 }
 
-void BOBbot::apply_external_force(v2 pos, v2 Force){
+void Particle::apply_external_force(v2 pos, v2 Force){
   v2 radius = position.minus(pos);
   v2 distance = pos.minus(position);
   distance.normalize();

@@ -1,7 +1,7 @@
 #pragma once
 #include "v2.h"
 
-class BOBbot
+class Particle
 {
 
 private:
@@ -9,7 +9,7 @@ private:
     
     double inertia = 0.5*mass*radius*radius;
 public:
-    BOBbot();
+    Particle();
 	v2 position;
     v2 direction;
     v2 External_Force;

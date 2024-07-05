@@ -2,7 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "BOBbot.h"
+#include "Particle.h"
 #include "v2.h"
 #include "contact.h"
 #include "interact_force.h"
@@ -17,7 +17,7 @@ int main(int argc, char* argv[])
     const int inputValue = std::stoi(argv[1]);
     n = inputValue;
   }
-  BOBbot * BOBbotArray = new BOBbot[n];
+  Particle * ParticleArray = new Particle[n];
   
   
   
@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
   int place_index = 1;
   int num_of_try = 0;
   while (place_index <n){
-    std::cout<<"Placing "<<place_index<<"th BOBbot"<<std::endl;
+    std::cout<<"Placing "<<place_index<<"th Particle"<<std::endl;
     num_of_try = 0;
     bool place_success = 0;
     while (! place_success){
@@ -34,9 +34,9 @@ int main(int argc, char* argv[])
       int contact_index = 0;
         while (contact_index<place_index){
         
-          if (contact(BOBbotArray[contact_index],BOBbotArray[place_index])){
+          if (contact(ParticleArray[contact_index],ParticleArray[place_index])){
             num_of_try++;
-            BOBbotArray[place_index] = BOBbot();
+            ParticleArray[place_index] = Particle();
             break;
           }
           contact_index++;
@@ -57,30 +57,30 @@ int main(int argc, char* argv[])
 
   std::ofstream myfile;
   
-  // savedata(BOBbotArray);
+  // savedata(ParticleArray);
   
   for (int i =0;i<n;i++){
-    BOBbotArray[i].disp_pos();
+    ParticleArray[i].disp_pos();
     myfile.open("position.txt", std::ios_base::app);
-    myfile<<BOBbotArray[i].position.x<<" "<<BOBbotArray[i].position.y<<std::endl;
+    myfile<<ParticleArray[i].position.x<<" "<<ParticleArray[i].position.y<<std::endl;
     myfile.close();
-    // BOBbotArray[i].disp_External_Force();
-    BOBbotArray[i].disp_External_Force();
+    // ParticleArray[i].disp_External_Force();
+    ParticleArray[i].disp_External_Force();
 
 
 
   }
 
   std::cout<<"Force_Applied"<<std::endl;
-  External_Force_update(BOBbotArray,0.0004,n);
+  External_Force_update(ParticleArray,0.0004,n);
   for (int i =0;i<n;i++){
-    BOBbotArray[i].disp_pos();
+    ParticleArray[i].disp_pos();
     myfile.open("Force.txt", std::ios_base::app);
-    myfile<<BOBbotArray[i].position.x<<" "<<BOBbotArray[i].position.y<<"  "<<BOBbotArray[i].External_Force.x<<" "<<BOBbotArray[i].External_Force.y<<std::endl;
+    myfile<<ParticleArray[i].position.x<<" "<<ParticleArray[i].position.y<<"  "<<ParticleArray[i].External_Force.x<<" "<<ParticleArray[i].External_Force.y<<std::endl;
     myfile.close();
-    // BOBbotArray[i].disp_External_Force();
+    // ParticleArray[i].disp_External_Force();
     
-    BOBbotArray[i].disp_External_Force();
+    ParticleArray[i].disp_External_Force();
 
 
 

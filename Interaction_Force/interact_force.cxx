@@ -1,32 +1,32 @@
-#include "BOBbot.h"
+#include "Particle.h"
 #include "v2.h"
 #include <iostream>
 #include <math.h>
 #include <cmath>
 
-void Repel_Force(BOBbot& BOBbotA, BOBbot& BOBbotB,v2 distance, double h){
+void Repel_Force(Particle& ParticleA, Particle& ParticleB,v2 distance, double h){
     double k = 1000;
-    double repulsive_distance = BOBbotA.radius+BOBbotB.radius+h-distance.norm();
+    double repulsive_distance = ParticleA.radius+ParticleB.radius+h-distance.norm();
     v2 direction = distance.product(1/distance.norm());
-    v2 collision_position = BOBbotB.position.sum(direction.product(0.5*distance.norm()));
-    BOBbotA.apply_external_force(collision_position,direction.product((k*repulsive_distance)));
-    BOBbotB.apply_external_force(collision_position,direction.product(-(k*repulsive_distance)));
+    v2 collision_position = ParticleB.position.sum(direction.product(0.5*distance.norm()));
+    ParticleA.apply_external_force(collision_position,direction.product((k*repulsive_distance)));
+    ParticleB.apply_external_force(collision_position,direction.product(-(k*repulsive_distance)));
 
 }
 
-void External_Force_update(BOBbot *BOBbotArray, double h, int Num_of_BOBbot){
+void External_Force_update(Particle *ParticleArray, double h, int Num_of_Particle){
     
-    // int Num_of_BOBbot = sizeof(BOBbotArray)/sizeof(BOBbotArray[0]);
-    // std::cout<<"NUM of BOBbot  "<<sizeof(BOBbotArray)<<std::endl;
-    for(int i =0;i<Num_of_BOBbot;i++){
-        for(int j =i+1;j<Num_of_BOBbot;j++){
-            v2 distance = BOBbotArray[i].position.minus(BOBbotArray[j].position);
+    // int Num_of_Particle = sizeof(ParticleArray)/sizeof(ParticleArray[0]);
+    // std::cout<<"NUM of Particle  "<<sizeof(ParticleArray)<<std::endl;
+    for(int i =0;i<Num_of_Particle;i++){
+        for(int j =i+1;j<Num_of_Particle;j++){
+            v2 distance = ParticleArray[i].position.minus(ParticleArray[j].position);
             std::cout<<"Distance  "<<distance.norm()<<std::endl;
-            if (distance.norm()<(BOBbotArray[i].radius+BOBbotArray[j].radius+h)){
-                Repel_Force(BOBbotArray[i],BOBbotArray[j],distance,h);
+            if (distance.norm()<(ParticleArray[i].radius+ParticleArray[j].radius+h)){
+                Repel_Force(ParticleArray[i],ParticleArray[j],distance,h);
                 
-                // BOBbotArray[i].disp_External_Force();
-                // BOBbotArray[j].disp_External_Force();
+                // ParticleArray[i].disp_External_Force();
+                // ParticleArray[j].disp_External_Force();
             }
         }
     }

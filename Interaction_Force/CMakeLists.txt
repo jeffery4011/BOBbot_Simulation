@@ -1,2 +1,2 @@
 add_library(Interaction_Force_Library STATIC interact_force.cxx)
-target_link_libraries(Interaction_Force_Library PRIVATE BOBbot VectorLibrary RandomLibrary)
+target_link_libraries(Interaction_Force_Library PRIVATE Particle VectorLibrary RandomLibrary)

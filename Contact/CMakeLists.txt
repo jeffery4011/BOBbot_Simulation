@@ -1,2 +1,2 @@
 add_library(ContactLibrary STATIC contact.cxx)
-target_link_libraries(ContactLibrary PRIVATE BOBbot VectorLibrary RandomLibrary)
+target_link_libraries(ContactLibrary PRIVATE Particle VectorLibrary RandomLibrary)
