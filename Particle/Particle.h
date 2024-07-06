@@ -17,6 +17,7 @@ public:
     double Internal_Torque = 0;
     double sum_External_Force =0;
     double External_Torque = 0;
+    double angular_velocity = 0;
     // float angle;
     double radius = 0.04; // m
 	void disp_pos();
