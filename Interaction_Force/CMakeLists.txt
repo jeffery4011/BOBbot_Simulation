@@ -1,2 +1,3 @@
 add_library(Interaction_Force_Library STATIC interact_force.cxx)
-target_link_libraries(Interaction_Force_Library PRIVATE Particle VectorLibrary RandomLibrary)
+target_link_libraries(Interaction_Force_Library PUBliC Particle VectorLibrary RandomLibrary)
+target_include_directories(Interaction_Force_Library PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
