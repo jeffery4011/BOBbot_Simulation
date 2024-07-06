@@ -3,12 +3,10 @@
 
 class Particle
 {
-
-private:
-    double mass = 0.151; //kg
     
-    double inertia = 0.5*mass*radius*radius;
 public:
+    double mass = 0.151; //kg
+    double inertia = 0.5*mass*radius*radius;
     Particle();
 	v2 position;
     v2 velocity;
