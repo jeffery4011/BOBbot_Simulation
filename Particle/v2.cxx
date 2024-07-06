@@ -59,3 +59,7 @@ void v2::rotation(double angle){
 double v2::cross(v2 v){
     return x*v.y-v.x*y;
 }
+
+v2 v2::angular_velocity_rotate(double w){
+    return v2(-y*w,x*w);
+}

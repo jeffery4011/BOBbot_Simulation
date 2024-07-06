@@ -20,6 +20,7 @@ public:
 	v2 minus(v2 v);
 	void rotation(double angle);
 	double cross(v2 v);
+	v2 angular_velocity_rotate(double w)
 
 };
 

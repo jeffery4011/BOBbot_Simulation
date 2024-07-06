@@ -1,0 +1,2 @@
+add_library(Solver STATIC solver.cxx)
+target_link_libraries(Solver PRIVATE Particle VectorLibrary RandomLibrary Interaction_Force_Library)

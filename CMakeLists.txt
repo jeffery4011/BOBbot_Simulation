@@ -11,7 +11,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 add_subdirectory(Particle)
 add_subdirectory(Contact)
 add_subdirectory(Interaction_Force)
-
+add_subdirectory(Solver)
 
 # TODO 2: Use add_subdirectory() to add MathFunctions to this project
 
@@ -20,6 +20,7 @@ add_executable(BOBbot_simulation BOBbot_simulation.cxx)
 target_link_libraries(BOBbot_simulation PUBLIC Particle)
 target_link_libraries(BOBbot_simulation PUBLIC ContactLibrary)
 target_link_libraries(BOBbot_simulation PUBLIC Interaction_Force_Library)
+target_link_libraries(BOBbot_simulation PUBLIC Solver)
 # TODO 3: Use target_link_libraries to link the library to our executable
 
 # add the binary tree to the search path for include files
@@ -29,6 +30,7 @@ target_include_directories(BOBbot_simulation PUBLIC
                            "${PROJECT_SOURCE_DIR}/Particle"
                            "${PROJECT_SOURCE_DIR}/Contact"
                            "${PROJECT_SOURCE_DIR}/Interaction_Force"
+                           "${PROJECT_SOURCE_DIR}/Solver"
                            )
 
               
