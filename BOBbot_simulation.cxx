@@ -60,7 +60,7 @@ int main(int argc, char* argv[])
   
   // savedata(ParticleArray);
   
-  // for (int i =0;i<n;i++){
+  for (int i =0;i<n;i++){
     
     
     if (i%2==0){
@@ -86,7 +86,7 @@ int main(int argc, char* argv[])
 
 
 
-  // }
+  }
 
   std::cout<<"Force_Applied"<<std::endl;
   for(int t=0;t<10000;t++){
