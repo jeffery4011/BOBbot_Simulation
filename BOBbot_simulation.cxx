@@ -68,6 +68,8 @@ int main(int argc, char* argv[])
       ParticleArray[i].position.y=0;
       ParticleArray[i].velocity.x=0.03;
       ParticleArray[i].velocity.y=0;
+      ParticleArray[i].direction.x=1;
+      ParticleArray[i].direction.y=0;
       ParticleArray[i].angular_velocity=0.04;
     }
     else{
@@ -75,6 +77,8 @@ int main(int argc, char* argv[])
       ParticleArray[i].position.y=0;
       ParticleArray[i].velocity.x=-0.03;
       ParticleArray[i].velocity.y=0;
+      ParticleArray[i].direction.x=1;
+      ParticleArray[i].direction.y=0;
       ParticleArray[i].angular_velocity=0.04;
     }
   //   ParticleArray[i].disp_pos();
@@ -92,7 +96,7 @@ int main(int argc, char* argv[])
   for(int t=0;t<10000;t++){
     brute_particle_update_solver(ParticleArray,0.001,0.001,n);
     for (int i =0;i<n;i++){
-    ParticleArray[i].disp_pos();
+    // ParticleArray[i].disp_pos();
     myfile.open("Force.txt", std::ios_base::app);
     myfile<<ParticleArray[i].position.x<<" "<<ParticleArray[i].position.y<<"  "<<ParticleArray[i].direction.x<<" "<<ParticleArray[i].direction.y<<std::endl;
     myfile.close();
