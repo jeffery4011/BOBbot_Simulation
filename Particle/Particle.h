@@ -11,6 +11,7 @@ private:
 public:
     Particle();
 	v2 position;
+    v2 velocity;
     v2 direction;
     v2 External_Force;
     v2 Internal_Force;

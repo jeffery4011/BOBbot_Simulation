@@ -5,7 +5,7 @@
 #include <cmath>
 #include <iostream>
 
-Particle::Particle():position(),direction(),External_Force(0,0),Internal_Force(0,0)
+Particle::Particle():position(),velocity(),direction(),External_Force(0,0),Internal_Force(0,0)
 {
 
   direction.normalize();

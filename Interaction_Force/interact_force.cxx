@@ -36,7 +36,7 @@ void External_Force_update(Particle *ParticleArray,const double h,const int Num_
             std::cout<<"Distance  "<<distance.norm()<<std::endl;
             if (distance.norm()<(ParticleArray[i].radius+ParticleArray[j].radius+h)){
                 v2 direction = distance.product(1/distance.norm());
-                v2 collision_position = ParticleB.position.sum(direction.product(0.5*distance.norm()));
+                v2 collision_position = Particle[j].position.sum(direction.product(0.5*distance.norm()));
                 Repulsive_Force(ParticleArray[i],ParticleArray[j],distance,direction,collision_position);
                 
                 // ParticleArray[i].disp_External_Force();
