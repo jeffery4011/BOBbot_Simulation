@@ -4,7 +4,7 @@
 #include <math.h>
 #include <cmath>
 
-void Repel_Force(Particle& ParticleA, Particle& ParticleB,v2 distance, double h){
+void Repel_Force(Particle& ParticleA, Particle& ParticleB,const v2 distance,const double h){
     double k = 1000;
     double repulsive_distance = ParticleA.radius+ParticleB.radius+h-distance.norm();
     v2 direction = distance.product(1/distance.norm());
@@ -14,7 +14,7 @@ void Repel_Force(Particle& ParticleA, Particle& ParticleB,v2 distance, double h)
 
 }
 
-void External_Force_update(Particle *ParticleArray, double h, int Num_of_Particle){
+void External_Force_update(Particle *ParticleArray,const double h,const int Num_of_Particle){
     
     // int Num_of_Particle = sizeof(ParticleArray)/sizeof(ParticleArray[0]);
     // std::cout<<"NUM of Particle  "<<sizeof(ParticleArray)<<std::endl;
