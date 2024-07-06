@@ -60,6 +60,14 @@ int main(int argc, char* argv[])
   // savedata(ParticleArray);
   
   for (int i =0;i<n;i++){
+    
+    
+    if (i%2==0){
+      ParticleArray[i].position(0,-4);
+    }
+    else{
+      ParticleArray[i].position(0,4);
+    }
     ParticleArray[i].disp_pos();
     myfile.open("position.txt", std::ios_base::app);
     myfile<<ParticleArray[i].position.x<<" "<<ParticleArray[i].position.y<<std::endl;
