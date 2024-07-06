@@ -76,7 +76,7 @@ int main(int argc, char* argv[])
   for (int i =0;i<n;i++){
     ParticleArray[i].disp_pos();
     myfile.open("Force.txt", std::ios_base::app);
-    myfile<<ParticleArray[i].position.x<<" "<<ParticleArray[i].position.y<<"  "<<ParticleArray[i].External_Force.x<<" "<<ParticleArray[i].External_Force.y<<std::endl;
+    myfile<<ParticleArray[i].position.x<<" "<<ParticleArray[i].position.y<<"  "<<"  "<<ParticleArray[i].velocity.x<<" "<<ParticleArray[i].velocity.y<<"  "<<ParticleArray[i].External_Force.x<<" "<<ParticleArray[i].External_Force.y<<std::endl;
     myfile.close();
     // ParticleArray[i].disp_External_Force();
     
