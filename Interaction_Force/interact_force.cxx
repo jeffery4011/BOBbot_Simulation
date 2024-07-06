@@ -7,7 +7,7 @@
 // Collision Model applys the discrete element method(DEM), which is a method for simulating granular material(Mishra 2003)
 //https://www.sciencedirect.com/science/article/pii/S0020768310002477
 
-void Repel_Force(Particle& ParticleA, Particle& ParticleB,v2 distance,const double h){
+void Repulsive_Force(Particle& ParticleA, Particle& ParticleB,v2 distance,const double h){
     double k = 1000;
     double repulsive_distance = ParticleA.radius+ParticleB.radius-distance.norm();
     v2 direction = distance.product(1/distance.norm());
@@ -26,7 +26,7 @@ void External_Force_update(Particle *ParticleArray,const double h,const int Num_
             v2 distance = ParticleArray[i].position.minus(ParticleArray[j].position);
             std::cout<<"Distance  "<<distance.norm()<<std::endl;
             if (distance.norm()<(ParticleArray[i].radius+ParticleArray[j].radius+h)){
-                Repel_Force(ParticleArray[i],ParticleArray[j],distance,h);
+                Repulsive_Force(ParticleArray[i],ParticleArray[j],distance,h);
                 
                 // ParticleArray[i].disp_External_Force();
                 // ParticleArray[j].disp_External_Force();
