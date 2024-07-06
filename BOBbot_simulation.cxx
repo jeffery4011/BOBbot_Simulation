@@ -64,11 +64,11 @@ int main(int argc, char* argv[])
     
     if (i%2==0){
       ParticleArray[i].position.x=0;
-      ParticleArray[i].position.y=-4;
+      ParticleArray[i].position.y=-0.04;
     }
     else{
       ParticleArray[i].position.x=0;
-      ParticleArray[i].position.y=4;
+      ParticleArray[i].position.y=0.04;
     }
     ParticleArray[i].disp_pos();
     myfile.open("position.txt", std::ios_base::app);
