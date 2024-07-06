@@ -42,7 +42,7 @@ void External_Force_update(Particle *ParticleArray,const double h,const int Num_
     for(int i =0;i<Num_of_Particle;i++){
         for(int j =i+1;j<Num_of_Particle;j++){
             v2 distance = ParticleArray[i].position.minus(ParticleArray[j].position);
-            std::cout<<"Distance  "<<distance.norm()<<std::endl;
+            // std::cout<<"Distance  "<<distance.norm()<<std::endl;
             if (distance.norm()<(ParticleArray[i].radius+ParticleArray[j].radius+h)){
                 v2 direction = distance.product(1/distance.norm());
                 v2 collision_position = ParticleArray[j].position.sum(direction.product(0.5*distance.norm()));
