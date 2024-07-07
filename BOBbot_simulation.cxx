@@ -109,7 +109,7 @@ int main(int argc, char* argv[])
 
 
   }
-  brute_particle_update_solver(ParticleArray,0.001,0.002,n);
+  brute_particle_update_solver(ParticleArray,0.001,0.008,n);
   }
   
   
