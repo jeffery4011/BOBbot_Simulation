@@ -7,9 +7,9 @@
 // Collision Model applys the discrete element method(DEM), which is a method for simulating granular material(Mishra 2003)
 //https://www.sciencedirect.com/science/article/pii/S0020768310002477
 
-void Repulsive_Force(Particle& ParticleA, Particle& ParticleB,v2 distance,v2 direction,v2 collision_position){
+void Repulsive_Force(Particle& ParticleA, Particle& ParticleB,v2 distance,v2 direction,v2 collision_position,double h){
     double k = 4000;
-    double repulsive_distance = ParticleA.radius+ParticleB.radius-distance.norm();
+    double repulsive_distance = ParticleA.radius+ParticleB.radius-distance.norm()-h;
     ParticleA.apply_external_force(collision_position,direction.product((k*repulsive_distance)));
     ParticleB.apply_external_force(collision_position,direction.product(-(k*repulsive_distance)));
     // ParticleA.disp_External_Force();
@@ -72,7 +72,7 @@ void External_Force_update(Particle *ParticleArray,const double h,const int Num_
                 v2 direction = distance.product(1/distance.norm());
                 v2 collision_position = ParticleArray[j].position.sum(direction.product(0.5*distance.norm()));
                 Damping_Shear_Force(ParticleArray[i],ParticleArray[j],collision_position);
-                Repulsive_Force(ParticleArray[i],ParticleArray[j],distance,direction,collision_position);
+                Repulsive_Force(ParticleArray[i],ParticleArray[j],distance,direction,collision_position,h);
                 ParticleArray[i].disp_External_Torque();
                 ParticleArray[i].disp_vel();
                 ParticleArray[i].disp_angular_vel();
