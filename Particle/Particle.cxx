@@ -52,7 +52,7 @@ void Particle::disp_sum_External_Force(){
 }
 
 void Particle::apply_external_force(v2 pos,v2 Force){
-  v2 radius = position.minus(pos);
+  v2 radius = pos.minus(position);
   v2 distance = pos.minus(position);
   distance.normalize();
   sum_External_Force += Force.norm();
