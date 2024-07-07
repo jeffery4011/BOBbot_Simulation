@@ -94,7 +94,7 @@ int main(int argc, char* argv[])
   }
 
   std::cout<<"Force_Applied"<<std::endl;
-  for(int t=0;t<200;t++){
+  for(int t=0;t<1000;t++){
     
     for (int i =0;i<n;i++){
     // ParticleArray[i].disp_pos();
@@ -109,7 +109,7 @@ int main(int argc, char* argv[])
 
 
   }
-  brute_particle_update_solver(ParticleArray,0.006,0.001,n);
+  brute_particle_update_solver(ParticleArray,0.001,0.006,n);
   }
   
   
