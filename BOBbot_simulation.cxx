@@ -7,6 +7,7 @@
 #include "contact.h"
 #include "interact_force.h"
 #include "solver.h"
+#include <iomanip>
 
 int main(int argc, char* argv[])
 {
@@ -99,6 +100,7 @@ int main(int argc, char* argv[])
     for (int i =0;i<n;i++){
     // ParticleArray[i].disp_pos();
     myfile.open("Force.txt", std::ios_base::app);
+    myfile<<std::setprecision(4)<<std::fixed;
     myfile<<ParticleArray[i].position.x<<" "<<ParticleArray[i].position.y<<"  "<<ParticleArray[i].direction.x<<" "<<ParticleArray[i].direction.y<<"  "<<ParticleArray[i].velocity.x<<std::endl;
     myfile.close();
     // 
