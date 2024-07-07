@@ -28,10 +28,10 @@ void Damping_Shear_Force(Particle& ParticleA, Particle& ParticleB,v2 collision_p
     ParticleB.apply_external_force(collision_position,relative_velocity.product(eta));
 
 
-    double kt = 20;
+    double kt = 2;
     v2 relative_tang_velocity = particleA_tang_velocity.minus(particleB_tang_velocity);
     std::cout<<"Relative_tanget_velocity: "<< relative_tang_velocity.x<<"   "<<relative_tang_velocity.y<<std::endl;
-    ParticleA.apply_external_force(collision_position,relative_tang_velocity.product(1*kt));
+    ParticleA.apply_external_force(collision_position,relative_tang_velocity.product(-1*kt));
     ParticleB.apply_external_force(collision_position,relative_tang_velocity.product(1*kt));
 
 }
