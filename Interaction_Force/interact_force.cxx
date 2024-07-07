@@ -9,7 +9,7 @@
 
 void Repulsive_Force(Particle& ParticleA, Particle& ParticleB,v2 distance,v2 direction,v2 collision_position,double h){
     double k = 4000;
-    double repulsive_distance = ParticleA.radius+ParticleB.radius-distance.norm()-h;
+    double repulsive_distance = ParticleA.radius+ParticleB.radius-distance.norm()+h;
     ParticleA.apply_external_force(collision_position,direction.product((k*repulsive_distance)));
     std::cout<<"PA Repulsive Distance: " << repulsive_distance<<std::endl;
     std::cout<<"PA Repulsive Force: "<< direction.product((k*repulsive_distance)).x<<"  "<<direction.product((k*repulsive_distance)).y<<std::endl;
