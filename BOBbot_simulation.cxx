@@ -94,12 +94,13 @@ int main(int argc, char* argv[])
 
   std::cout<<"Force_Applied"<<std::endl;
   for(int t=0;t<10000;t++){
-    brute_particle_update_solver(ParticleArray,0.001,0.001,n);
+    
     for (int i =0;i<n;i++){
     // ParticleArray[i].disp_pos();
     myfile.open("Force.txt", std::ios_base::app);
     myfile<<ParticleArray[i].position.x<<" "<<ParticleArray[i].position.y<<"  "<<ParticleArray[i].direction.x<<" "<<ParticleArray[i].direction.y<<std::endl;
     myfile.close();
+    brute_particle_update_solver(ParticleArray,0.001,0.001,n);
     // ParticleArray[i].disp_External_Force();
     
     // ParticleArray[i].disp_External_Force();
