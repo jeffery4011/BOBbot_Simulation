@@ -6,6 +6,7 @@ class Particle
     
 public:
     double mass = 0.151; //kg
+    double radius = 0.04; // m
     double inertia = 0.5*mass*radius*radius;
     Particle();
 	v2 position;
@@ -18,7 +19,7 @@ public:
     double External_Torque = 0;
     double angular_velocity = 0;
     // float angle;
-    double radius = 0.04; // m
+    
 	void disp_pos();
     void disp_direction();
     void disp_External_Force();
