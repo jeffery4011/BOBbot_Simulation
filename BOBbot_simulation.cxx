@@ -94,7 +94,7 @@ int main(int argc, char* argv[])
   }
 
   std::cout<<"Force_Applied"<<std::endl;
-  for(int t=0;t<100000;t++){
+  for(int t=0;t<7500;t++){
     
     for (int i =0;i<n;i++){
     // ParticleArray[i].disp_pos();
