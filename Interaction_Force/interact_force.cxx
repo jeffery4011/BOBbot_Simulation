@@ -11,6 +11,7 @@ void Repulsive_Force(Particle& ParticleA, Particle& ParticleB,v2 distance,v2 dir
     double k = 4000;
     double repulsive_distance = ParticleA.radius+ParticleB.radius-distance.norm()-h;
     ParticleA.apply_external_force(collision_position,direction.product((k*repulsive_distance)));
+    std::cout<<"PA Repulsive Distance: " << repulsive_distance<<std::endl;
     std::cout<<"PA Repulsive Force: "<< direction.product((k*repulsive_distance)).x<<"  "<<direction.product((k*repulsive_distance)).y<<std::endl;
     ParticleB.apply_external_force(collision_position,direction.product(-(k*repulsive_distance)));
     // ParticleA.disp_External_Force();
@@ -41,7 +42,7 @@ void Damping_Shear_Force(Particle& ParticleA, Particle& ParticleB,v2 collision_p
     v2 relative_velocity = ParticleA_point_Velocity.minus(ParticleB_point_Velocity);
     ParticleA.apply_external_force(collision_position,relative_velocity.product(-1*eta));
     ParticleB.apply_external_force(collision_position,relative_velocity.product(1*eta));
-    std::cout<<"PA relative Force direction: "<< relative_velocity.product(-1*eta).x<<"  "<<relative_velocity.product(-1*eta).y<<std::endl;
+    // std::cout<<"PA relative Force direction: "<< relative_velocity.product(-1*eta).x<<"  "<<relative_velocity.product(-1*eta).y<<std::endl;
     // ParticleA.disp_External_Force();
     // ParticleB.disp_External_Force();
     
@@ -74,12 +75,12 @@ void External_Force_update(Particle *ParticleArray,const double h,const int Num_
                 v2 collision_position = ParticleArray[j].position.sum(direction.product(0.5*distance.norm()));
                 Damping_Shear_Force(ParticleArray[i],ParticleArray[j],collision_position);
                 Repulsive_Force(ParticleArray[i],ParticleArray[j],distance,direction,collision_position,h);
-                ParticleArray[i].disp_External_Torque();
-                ParticleArray[i].disp_vel();
-                ParticleArray[i].disp_angular_vel();
+                // ParticleArray[i].disp_External_Torque();
+                // ParticleArray[i].disp_vel();
+                // ParticleArray[i].disp_angular_vel();
 
                 
-                ParticleArray[i].disp_External_Force();
+                // ParticleArray[i].disp_External_Force();
                 // ParticleArray[j].disp_External_Force();
             }
         }
