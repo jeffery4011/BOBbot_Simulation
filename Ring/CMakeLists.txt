@@ -1,0 +1,2 @@
+add_library(Ring STATIC Ring.cxx)
+target_link_libraries(Ring PRIVATE Particle VectorLibrary RandomLibrary Interaction_Force_Library)
