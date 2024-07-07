@@ -8,7 +8,7 @@
 //https://www.sciencedirect.com/science/article/pii/S0020768310002477
 
 void Repulsive_Force(Particle& ParticleA, Particle& ParticleB,v2 distance,v2 direction,v2 collision_position){
-    double k = 10000;
+    double k = 1000;
     double repulsive_distance = ParticleA.radius+ParticleB.radius-distance.norm();
     ParticleA.apply_external_force(collision_position,direction.product((k*repulsive_distance)));
     ParticleB.apply_external_force(collision_position,direction.product(-(k*repulsive_distance)));
