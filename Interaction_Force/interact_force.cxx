@@ -40,8 +40,8 @@ void Damping_Shear_Force(Particle& ParticleA, Particle& ParticleB,v2 collision_p
     v2 relative_velocity = ParticleA_point_Velocity.minus(ParticleB_point_Velocity);
     ParticleA.apply_external_force(collision_position,relative_velocity.product(-1*eta));
     ParticleB.apply_external_force(collision_position,relative_velocity.product(+1*eta));
-    // ParticleA.disp_External_Force();
-    // ParticleB.disp_External_Force();
+    ParticleA.disp_External_Force();
+    ParticleB.disp_External_Force();
     
 
     
