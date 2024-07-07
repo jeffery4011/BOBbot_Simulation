@@ -99,7 +99,7 @@ int main(int argc, char* argv[])
     for (int i =0;i<n;i++){
     // ParticleArray[i].disp_pos();
     myfile.open("Force.txt", std::ios_base::app);
-    myfile<<ParticleArray[i].position.x<<" "<<ParticleArray[i].position.y<<"  "<<ParticleArray[i].direction.x<<" "<<ParticleArray[i].direction.y<<std::endl;
+    myfile<<ParticleArray[i].position.x<<" "<<ParticleArray[i].position.y<<"  "<<ParticleArray[i].direction.x<<" "<<ParticleArray[i].direction.y<<"  "<<ParticleArray[i].angular_velocity<<std::endl;
     myfile.close();
     // 
     // ParticleArray[i].disp_External_Force();
@@ -109,7 +109,7 @@ int main(int argc, char* argv[])
 
 
   }
-  brute_particle_update_solver(ParticleArray,0.001,0.001,n);
+  brute_particle_update_solver(ParticleArray,0.006,0.001,n);
   }
   
   
