@@ -52,7 +52,7 @@ void Damping_Shear_Force(Particle& ParticleA, Particle& ParticleB,v2 collision_p
     relative_tang_velocity.normalize();
     v2 relative_velocity_radius = relative_velocity.minus(relative_tang_velocity);
     relative_velocity_radius.normalize();
-    std::cout<<"Relative_tanget_velocity: "<< ParticleA.Internal_Force.x<<"   "<<ParticleA.Internal_Force.y<<std::endl;
+    std::cout<<"Relative_tanget_velocity: "<< ParticleA.External_Force.x<<"   "<<ParticleA.Exteranl_Force.y<<std::endl;
     
     v2 Force_norm = relative_velocity_radius.dot(ParticleA.External_Force.sum(ParticleA.Internal_Force));
     ParticleA.apply_external_force(collision_position,relative_tang_velocity.product(ParticleA.friction_coefficient*Force_norm.norm()));
