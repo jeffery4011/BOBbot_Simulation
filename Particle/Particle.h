@@ -18,7 +18,7 @@ public:
     double sum_External_Force =0;
     double External_Torque = 0;
     double angular_velocity = 0;
-    double friction_coefficient= 0;//0.05
+    double friction_coefficient= 0.05;
     // float angle;
     
 	void disp_pos();
