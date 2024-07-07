@@ -42,7 +42,7 @@ void Damping_Shear_Force(Particle& ParticleA, Particle& ParticleB,v2 collision_p
     v2 relative_velocity = ParticleA_point_Velocity.minus(ParticleB_point_Velocity);
     ParticleA.apply_external_force(collision_position,relative_velocity.product(-1*eta));
     ParticleB.apply_external_force(collision_position,relative_velocity.product(1*eta));
-    // std::cout<<"PA relative Force direction: "<< relative_velocity.product(-1*eta).x<<"  "<<relative_velocity.product(-1*eta).y<<std::endl;
+    std::cout<<"PA relative Force direction: "<< relative_velocity.product(-1*eta).x<<"  "<<relative_velocity.product(-1*eta).y<<std::endl;
     // ParticleA.disp_External_Force();
     // ParticleB.disp_External_Force();
     
@@ -81,7 +81,7 @@ void External_Force_update(Particle *ParticleArray,const double h,const int Num_
 
                 
                 ParticleArray[i].disp_External_Force();
-                ParticleArray[j].disp_External_Force();
+                // ParticleArray[j].disp_External_Force();
             }
         }
     }
