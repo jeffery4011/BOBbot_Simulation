@@ -22,6 +22,8 @@ public:
     
 	void disp_pos();
     void disp_direction();
+    void disp_angular_vel();
+    void disp_vel();
     void disp_External_Force();
     void disp_External_Torque();
     void disp_sum_External_Force();

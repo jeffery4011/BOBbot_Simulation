@@ -20,6 +20,14 @@ void Particle::disp_pos(){
 
 }
 
+void Particle::disp_vel(){
+  std::cout<<"Velocity_ x = " << velocity.x<<"  y="<<velocity.y<<std::endl;
+}
+
+void Particle::disp_angular_vel(){
+  std::cout<<"Angular_velocity= "<<angular_velocity<<std::endl;
+}
+
 void Particle::disp_direction(){
   std::cout<<"Direction_ x = " << direction.x<<"  y="<<direction.y<<std::endl;
   // double p = 3.1415926/2;

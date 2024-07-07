@@ -28,8 +28,8 @@ void Damping_Shear_Force(Particle& ParticleA, Particle& ParticleB,v2 collision_p
     std::cout<<"Relative_tanget_velocity: "<< relative_tang_velocity.x<<"   "<<relative_tang_velocity.y<<std::endl;
     ParticleA.apply_external_force(collision_position,relative_tang_velocity.product(1*kt));
     ParticleB.apply_external_force(collision_position,relative_tang_velocity.product(-1*kt));
-    ParticleA.disp_External_Torque();
-    ParticleB.disp_External_Torque();
+    // ParticleA.disp_External_Torque();
+    // ParticleB.disp_External_Torque();
     
     
     double eta = 1.5;
@@ -40,8 +40,8 @@ void Damping_Shear_Force(Particle& ParticleA, Particle& ParticleB,v2 collision_p
     v2 relative_velocity = ParticleA_point_Velocity.minus(ParticleB_point_Velocity);
     ParticleA.apply_external_force(collision_position,relative_velocity.product(-1*eta));
     ParticleB.apply_external_force(collision_position,relative_velocity.product(1*eta));
-    ParticleA.disp_External_Force();
-    ParticleB.disp_External_Force();
+    // ParticleA.disp_External_Force();
+    // ParticleB.disp_External_Force();
     
 
     
@@ -72,8 +72,10 @@ void External_Force_update(Particle *ParticleArray,const double h,const int Num_
                 v2 collision_position = ParticleArray[j].position.sum(direction.product(0.5*distance.norm()));
                 Damping_Shear_Force(ParticleArray[i],ParticleArray[j],collision_position);
                 Repulsive_Force(ParticleArray[i],ParticleArray[j],distance,direction,collision_position);
-                ParticleArray[i].disp_External_Torque();
-                
+                // ParticleArray[i].disp_External_Torque();
+                ParticleArray[i].disp_vel();
+                ParticleArray[i].disp_angular_vel();
+
                 
                 // ParticleArray[i].disp_External_Force();
                 // ParticleArray[j].disp_External_Force();
