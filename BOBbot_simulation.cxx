@@ -99,18 +99,49 @@ int main(int argc, char* argv[])
     
     for (int i =0;i<n;i++){
     // ParticleArray[i].disp_pos();
-    myfile.open("Force.txt", std::ios_base::app);
+    myfile.open("X.txt", std::ios_base::app);
     myfile<<std::setprecision(4)<<std::fixed;
-    myfile<<ParticleArray[i].position.x<<" "<<ParticleArray[i].position.y<<"  "<<ParticleArray[i].direction.x<<" "<<ParticleArray[i].direction.y<<"  "<<ParticleArray[i].velocity.x<<std::endl;
+    myfile<<ParticleArray[i].position.x<<std::endl;
     myfile.close();
     // 
     // ParticleArray[i].disp_External_Force();
     
     // ParticleArray[i].disp_External_Force();
+    }
+      for (int i =0;i<n;i++){
+    // ParticleArray[i].disp_pos();
+    myfile.open("Y.txt", std::ios_base::app);
+    myfile<<std::setprecision(4)<<std::fixed;
+    myfile<<ParticleArray[i].position.y<<std::endl;
+    myfile.close();
+    // 
+    // ParticleArray[i].disp_External_Force();
+    
+    // ParticleArray[i].disp_External_Force();
+    }
+      for (int i =0;i<n;i++){
+    // ParticleArray[i].disp_pos();
+    myfile.open("Dx.txt", std::ios_base::app);
+    myfile<<std::setprecision(4)<<std::fixed;
+    myfile<<ParticleArray[i].direction.x<<std::endl;
+    myfile.close();
+    // 
+    // ParticleArray[i].disp_External_Force();
+    
+    // ParticleArray[i].disp_External_Force();
+    }
+      for (int i =0;i<n;i++){
+    // ParticleArray[i].disp_pos();
+    myfile.open("Dy.txt", std::ios_base::app);
+    myfile<<std::setprecision(4)<<std::fixed;
+    myfile<<ParticleArray[i].direction.y<<std::endl;
+    myfile.close();
+    // 
+    // ParticleArray[i].disp_External_Force();
+    
+    // ParticleArray[i].disp_External_Force();
+    }
 
-
-
-  }
   brute_particle_update_solver(ParticleArray,0.001,0.002,n);
   }
   
