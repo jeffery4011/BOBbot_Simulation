@@ -98,6 +98,7 @@ int main(int argc, char* argv[])
   for(int t=0;t<7500;t++){
     
     for (int i =0;i<n;i++){
+    std::cout<<"Angular_velocity: "<<ParticleArray[i].angular_velocity<<std::endl;
     // ParticleArray[i].disp_pos();
     myfile.open("X.txt", std::ios_base::app);
     myfile<<std::setprecision(4)<<std::fixed;
