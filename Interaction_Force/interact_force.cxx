@@ -18,7 +18,7 @@ void Repulsive_Force(Particle& ParticleA, Particle& ParticleB,v2 distance,v2 dir
 }
 
 void Damping_Shear_Force(Particle& ParticleA, Particle& ParticleB,v2 collision_position){
-    double eta = 0.001;
+    double eta = 0.0001;
     v2 rad_A = collision_position.minus(ParticleA.position);
     v2 rad_B = collision_position.minus(ParticleB.position);
     v2 particleA_tang_velocity = v2(-1*ParticleA.angular_velocity*rad_A.y,ParticleA.angular_velocity*rad_A.x);
