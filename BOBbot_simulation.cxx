@@ -70,7 +70,7 @@ int main(int argc, char* argv[])
       ParticleArray[i].velocity.y=0;
       ParticleArray[i].direction.x=1;
       ParticleArray[i].direction.y=0;
-      ParticleArray[i].angular_velocity=1.2;
+      ParticleArray[i].angular_velocity=10;
     }
     else{
       ParticleArray[i].position.x=0.2;
@@ -79,7 +79,7 @@ int main(int argc, char* argv[])
       ParticleArray[i].velocity.y=0;
       ParticleArray[i].direction.x=1;
       ParticleArray[i].direction.y=0;
-      ParticleArray[i].angular_velocity=1.2;
+      ParticleArray[i].angular_velocity=10;
     }
     // ParticleArray[i].disp_direction();
   //   ParticleArray[i].disp_pos();
