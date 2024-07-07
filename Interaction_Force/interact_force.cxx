@@ -34,7 +34,7 @@ void Damping_Shear_Force(Particle& ParticleA, Particle& ParticleB,v2 collision_p
     // ParticleB.disp_External_Torque();
     
     
-    double eta = 0.5;
+    double eta = 0.7;
 
 
     v2 ParticleA_point_Velocity = ParticleA.velocity.sum(particleA_tang_velocity);
