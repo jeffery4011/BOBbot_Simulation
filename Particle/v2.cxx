@@ -1,6 +1,7 @@
 #include "v2.h"
 #include "randomize.h"
 #include <math.h>
+#include <iostream>
 #include <cmath>
 
 
