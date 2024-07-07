@@ -22,9 +22,9 @@ void Particle::disp_pos(){
 
 void Particle::disp_direction(){
   std::cout<<"Direction_ x = " << direction.x<<"  y="<<direction.y<<std::endl;
-  double p = 3.1415926/2;
-  direction.rotation(p);
-  std::cout<<"New Direction_ x = " << direction.x<<"  y="<<direction.y<<std::endl;
+  // double p = 3.1415926/2;
+  // direction.rotation(p);
+  // std::cout<<"New Direction_ x = " << direction.x<<"  y="<<direction.y<<std::endl;
 
 }
 
