@@ -64,22 +64,22 @@ int main(int argc, char* argv[])
     
     
     if (i%2==0){
-      ParticleArray[i].position.x=-0.4;
+      ParticleArray[i].position.x=-0.2;
       ParticleArray[i].position.y=0;
-      ParticleArray[i].velocity.x=0.03;
+      ParticleArray[i].velocity.x=0.3;
       ParticleArray[i].velocity.y=0;
       ParticleArray[i].direction.x=1;
       ParticleArray[i].direction.y=0;
-      ParticleArray[i].angular_velocity=0.04;
+      ParticleArray[i].angular_velocity=1.2;
     }
     else{
-      ParticleArray[i].position.x=0.4;
+      ParticleArray[i].position.x=0.2;
       ParticleArray[i].position.y=0;
-      ParticleArray[i].velocity.x=-0.03;
+      ParticleArray[i].velocity.x=-0.3;
       ParticleArray[i].velocity.y=0;
       ParticleArray[i].direction.x=1;
       ParticleArray[i].direction.y=0;
-      ParticleArray[i].angular_velocity=0.04;
+      ParticleArray[i].angular_velocity=1.2;
     }
     // ParticleArray[i].disp_direction();
   //   ParticleArray[i].disp_pos();
