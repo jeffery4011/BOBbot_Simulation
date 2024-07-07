@@ -64,6 +64,7 @@ void External_Force_update(Particle *ParticleArray,const double h,const int Num_
                 v2 collision_position = ParticleArray[j].position.sum(direction.product(0.5*distance.norm()));
                 Damping_Shear_Force(ParticleArray[i],ParticleArray[j],collision_position);
                 Repulsive_Force(ParticleArray[i],ParticleArray[j],distance,direction,collision_position);
+                ParticleArray[i].disp_External_Torque();
                 
                 
                 // ParticleArray[i].disp_External_Force();
