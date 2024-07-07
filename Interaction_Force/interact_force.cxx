@@ -12,6 +12,8 @@ void Repulsive_Force(Particle& ParticleA, Particle& ParticleB,v2 distance,v2 dir
     double repulsive_distance = ParticleA.radius+ParticleB.radius-distance.norm();
     ParticleA.apply_external_force(collision_position,direction.product((k*repulsive_distance)));
     ParticleB.apply_external_force(collision_position,direction.product(-(k*repulsive_distance)));
+    ParticleA.disp_External_Force();
+    ParticleB.disp_External_Force();
 
 }
 
@@ -26,8 +28,7 @@ void Damping_Shear_Force(Particle& ParticleA, Particle& ParticleB,v2 collision_p
     v2 relative_velocity = ParticleA_point_Velocity.minus(ParticleB_point_Velocity);
     ParticleA.apply_external_force(collision_position,relative_velocity.product(-1*eta));
     ParticleB.apply_external_force(collision_position,relative_velocity.product(+1*eta));
-    ParticleA.disp_External_Force();
-    ParticleB.disp_External_Force();
+    
 
     double kt = 0.2;
     v2 relative_tang_velocity = particleA_tang_velocity.minus(particleB_tang_velocity);
@@ -59,9 +60,9 @@ void External_Force_update(Particle *ParticleArray,const double h,const int Num_
             if (distance.norm()<(ParticleArray[i].radius+ParticleArray[j].radius+h)){
                 v2 direction = distance.product(1/distance.norm());
                 v2 collision_position = ParticleArray[j].position.sum(direction.product(0.5*distance.norm()));
-                
-                Damping_Shear_Force(ParticleArray[i],ParticleArray[j],collision_position);
                 Repulsive_Force(ParticleArray[i],ParticleArray[j],distance,direction,collision_position);
+                Damping_Shear_Force(ParticleArray[i],ParticleArray[j],collision_position);
+                
                 // ParticleArray[i].disp_External_Force();
                 // ParticleArray[j].disp_External_Force();
             }
