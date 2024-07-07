@@ -43,6 +43,16 @@ void External_Force_update(Particle *ParticleArray,const double h,const int Num_
     // int Num_of_Particle = sizeof(ParticleArray)/sizeof(ParticleArray[0]);
     // std::cout<<"NUM of Particle  "<<sizeof(ParticleArray)<<std::endl;
     for(int i =0;i<Num_of_Particle;i++){
+        ParticleArray[i].External_Force.x=0;
+        ParticleArray[i].External_Force.y=0;
+        ParticleArray[i].Internal_Force.x=0;
+        ParticleArray[i].Internal_Force.y=0;
+        ParticleArray[i].External_Torque = 0;
+        ParticleArray[i].Internal_Torque = 0;
+    }
+
+
+    for(int i =0;i<Num_of_Particle;i++){
         for(int j =i+1;j<Num_of_Particle;j++){
             v2 distance = ParticleArray[i].position.minus(ParticleArray[j].position);
             // std::cout<<"Distance  "<<distance.norm()<<std::endl;
