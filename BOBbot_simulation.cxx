@@ -12,6 +12,30 @@
 
 int main(int argc, char* argv[])
 {
+
+
+  GLFWwindow* window;
+  if (!glfwInit()){
+    return -1;
+  }
+  window = glfwCreateWindow(640,480,"Window!",NULL,NULL);
+  glfwMakeContextCurrent(window);
+
+  if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
+    std::cout<<"Couldn't load opengl"<<std::endl;
+    glfwTerminate();
+    return -1;
+  }
+  glClearColor(0.25f,0.5f,0.75f,1.0f);
+  while(!GLFWwindowShouldClose(window)){
+    glfwPollEvents();
+    glClear(GL_COLOR_BUFFER_BIT);
+    glfwSwapBuffers(window);
+  }
+  glfwTerminate();
+  return 0;
+
+
   int n = 0;
     if (argc < 2) {
     n = 10;
@@ -83,66 +107,34 @@ int main(int argc, char* argv[])
       ParticleArray[i].direction.y=0;
       ParticleArray[i].angular_velocity=10;
     }
-    // ParticleArray[i].disp_direction();
-  //   ParticleArray[i].disp_pos();
-  //   myfile.open("position.txt", std::ios_base::app);
-  //   myfile<<ParticleArray[i].position.x<<" "<<ParticleArray[i].position.y<<std::endl;
-  //   myfile.close();
-  //   // ParticleArray[i].disp_External_Force();
-  //   ParticleArray[i].disp_External_Force();
-
-
-
   }
 
   std::cout<<"Force_Applied"<<std::endl;
   for(int t=0;t<7500;t++){
     
     for (int i =0;i<n;i++){
-    // std::cout<<"Angular_velocity: "<<ParticleArray[i].angular_velocity<<std::endl;
-    // ParticleArray[i].disp_External_Torque();
-    // ParticleArray[i].disp_pos();
     myfile.open("X.txt", std::ios_base::app);
     myfile<<std::setprecision(4)<<std::fixed;
     myfile<<ParticleArray[i].position.x<<std::endl;
     myfile.close();
-    // 
-    // ParticleArray[i].disp_External_Force();
-    
-    // ParticleArray[i].disp_External_Force();
     }
       for (int i =0;i<n;i++){
-    // ParticleArray[i].disp_pos();
     myfile.open("Y.txt", std::ios_base::app);
     myfile<<std::setprecision(4)<<std::fixed;
     myfile<<ParticleArray[i].position.y<<std::endl;
     myfile.close();
-    // 
-    // ParticleArray[i].disp_External_Force();
-    
-    // ParticleArray[i].disp_External_Force();
     }
       for (int i =0;i<n;i++){
-    // ParticleArray[i].disp_pos();
     myfile.open("Dx.txt", std::ios_base::app);
     myfile<<std::setprecision(4)<<std::fixed;
     myfile<<ParticleArray[i].direction.x<<std::endl;
     myfile.close();
-    // 
-    // ParticleArray[i].disp_External_Force();
-    
-    // ParticleArray[i].disp_External_Force();
     }
       for (int i =0;i<n;i++){
-    // ParticleArray[i].disp_pos();
     myfile.open("Dy.txt", std::ios_base::app);
     myfile<<std::setprecision(4)<<std::fixed;
     myfile<<ParticleArray[i].direction.y<<std::endl;
     myfile.close();
-    // 
-    // ParticleArray[i].disp_External_Force();
-    
-    // ParticleArray[i].disp_External_Force();
     }
 
   brute_particle_update_solver(ParticleArray,0.001,0.002,n);
