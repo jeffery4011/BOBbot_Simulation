@@ -8,7 +8,9 @@
 #include "interact_force.h"
 #include "solver.h"
 #include <iomanip>
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
+// #include "glad.h"
 
 int main(int argc, char* argv[])
 {
