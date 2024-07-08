@@ -19,7 +19,7 @@ add_subdirectory(Ring)
 # add the executable
 add_executable(BOBbot_simulation BOBbot_simulation.cxx)
 target_link_libraries(BOBbot_simulation PUBLIC Particle)
-target_link_libraries(BOBbot_simulation glfw)
+target_link_libraries(BOBbot_simulation PUBLIC glfw)
 target_link_libraries(BOBbot_simulation PUBLIC ContactLibrary)
 target_link_libraries(BOBbot_simulation PUBLIC Interaction_Force_Library)
 target_link_libraries(BOBbot_simulation PUBLIC Solver)
