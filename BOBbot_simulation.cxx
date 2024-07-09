@@ -87,7 +87,7 @@ int main(int argc, char* argv[])
   for(int t=0;t<7500;t++){
     
     for (int i =0;i<n;i++){
-    myfile.open("Position.txt", std::ios_base::app);
+    myfile.open("BOBbot_"+std::to_string(i)".txt", std::ios_base::app);
     // myfile<<std::setprecision(4)<<std::fixed;
     myfile<<ParticleArray[i].position.x<<" "<<ParticleArray[i].position.y<<" "<<ParticleArray[i].direction.x<<" "<<ParticleArray[i].direction.y<<std::endl;
     myfile.close();
