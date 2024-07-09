@@ -4,8 +4,8 @@
 
 class Ring_particle: public Particle{
     public:
-    // v2 head;
-    // v2 tail;
+    v2 head;
+    v2 tail;
     Ring_particle();
     // void update_head();
 };
