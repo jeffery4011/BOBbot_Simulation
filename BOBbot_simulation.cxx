@@ -54,6 +54,7 @@ int main(int argc, char* argv[])
     }
     place_index++;
   }std::cout<<"All Robots have been placed!"<<std::endl;
+  std::cout<<"Robot_radius: "<<ParticleArray[0].radius<<std::endl;
 
   //End of Check Overlapping
 
