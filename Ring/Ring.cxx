@@ -18,6 +18,6 @@ void Ring::initialize(double ring_radius){
 
 void Ring::disp_particle(){
     for (int i =0;i<n;i++){
-        Ring.RingParticleArray[i].disp_pos();
+        RingParticleArray[i].disp_pos();
     }
 }
