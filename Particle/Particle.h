@@ -9,6 +9,8 @@ public:
     double radius = 0.04; // m
     double inertia = 0.5*mass*radius*radius;
     Particle();
+    v2 head;
+    v2 tail;
 	v2 position;
     v2 velocity;
     v2 direction;
