@@ -7,6 +7,7 @@
 #include "contact.h"
 #include "interact_force.h"
 #include "solver.h"
+#include "Ring.h"
 
 int main(int argc, char* argv[])
 {
@@ -57,6 +58,10 @@ int main(int argc, char* argv[])
   //End of Check Overlapping
 
   std::ofstream myfile;
+  Ring ring;
+  ring.initialize(0.02);
+  ring.disp_particle();
+
   
   // savedata(ParticleArray);
   
@@ -83,15 +88,15 @@ int main(int argc, char* argv[])
   //   }
   // }
 
-  std::cout<<"Force_Applied"<<std::endl;
-  for(int t=0;t<7500;t++){
+  // std::cout<<"Force_Applied"<<std::endl;
+  // for(int t=0;t<7500;t++){
     
-    for (int i =0;i<n;i++){
-    myfile.open("BOBbot_"+std::to_string(i)+".txt", std::ios_base::app);
-    // myfile<<std::setprecision(4)<<std::fixed;
-    myfile<<ParticleArray[i].position.x<<" "<<ParticleArray[i].position.y<<" "<<ParticleArray[i].direction.x<<" "<<ParticleArray[i].direction.y<<std::endl;
-    myfile.close();
-    }
+  //   for (int i =0;i<n;i++){
+  //   myfile.open("BOBbot_"+std::to_string(i)+".txt", std::ios_base::app);
+  //   // myfile<<std::setprecision(4)<<std::fixed;
+  //   myfile<<ParticleArray[i].position.x<<" "<<ParticleArray[i].position.y<<" "<<ParticleArray[i].direction.x<<" "<<ParticleArray[i].direction.y<<std::endl;
+  //   myfile.close();
+  //   }
     //   for (int i =0;i<n;i++){
     // myfile.open("Y.txt", std::ios_base::app);
     // myfile<<std::setprecision(4)<<std::fixed;
@@ -111,8 +116,8 @@ int main(int argc, char* argv[])
     // myfile.close();
     
 
-  brute_particle_update_solver(ParticleArray,0.001,0.002,n);
-  }
+  // brute_particle_update_solver(ParticleArray,0.001,0.002,n);
+  // }
   
   
   

@@ -13,5 +13,7 @@ class Ring {
     int n = 1000;
     Particle * RingParticleArray = new Ring_particle[n];
 
-    void initialize();
+    void initialize(double ring_radius);
+    void disp_particle();
+
 };
