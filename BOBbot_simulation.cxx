@@ -96,7 +96,7 @@ int main(int argc, char* argv[])
     for (int i =0;i<ring.n;i++){
     myfile.open("Ring.txt", std::ios_base::app);
     // myfile<<std::setprecision(4)<<std::fixed;
-    myfile<<ring.Ring_particle[i].position.x<<" "<<ring.Ring_particle[i].position.y<<std::endl;
+    myfile<<ring.RingParticleArray[i].position.x<<" "<<ring.RingParticleArray[i].position.y<<std::endl;
     myfile.close();
     }
     
