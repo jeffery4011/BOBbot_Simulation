@@ -29,8 +29,8 @@ void Ring::initialize(double ring_radius){
     RingParticleArray[0].tail.y = -1*RingParticleArray[0].radius;
     RingParticleArray[0].tail.x = ring_radius;
     for (int i =1;i++;i<n){
-        RingParticleArray[i].y = cos(2*PI*i/n);
-        RingParticleArray[i].x = sin(2*PI*i/n);
+        RingParticleArray[i].position.y = cos(2*PI*i/n);
+        RingParticleArray[i].position.x = sin(2*PI*i/n);
         RingParticleArray[i].tail.x = RingParticleArray[i-1].head.x 
         RingParticleArray[i].tail.y = RingParticleArray[i-1].head.y
         RingParticleArray[i].update_head(); 
