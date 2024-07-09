@@ -25,7 +25,7 @@ void Ring::initialize(double ring_radius){
     std::cout<<"Ring_particle_radius: "<<RingParticleArray[0].radius<<std::endl;
     n = 3.1415926*ring_radius/RingParticleArray[0].radius;
     RingParticleArray = new Ring_particle[n];
-    std::cout<<"Ring_particle_head_x: "<<RingParticleArray[0].head.x<<std::endl;
+    std::cout<<"Number of particles "<<n<<std::endl;
     
     RingParticleArray[0].position.y =0;
     RingParticleArray[0].position.x =ring_radius;
