@@ -109,7 +109,7 @@ int main(int argc, char* argv[])
     // myfile<<std::setprecision(4)<<std::fixed;
     // myfile<<ParticleArray[i].direction.y<<std::endl;
     // myfile.close();
-    }
+    
 
   brute_particle_update_solver(ParticleArray,0.001,0.002,n);
   }
