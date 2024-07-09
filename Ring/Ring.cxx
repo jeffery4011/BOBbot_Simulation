@@ -14,11 +14,11 @@
 Ring_particle::Ring_particle(){
     {mass = 0.0000001;radius = 0.0001;inertia = 0.5*mass*radius*radius;}
 }
-void Ring_particle::update_head(){
-    direction = tail.minus(position);
-    head = position.sum(direction);
-    direction.normalize();
-}
+// void Ring_particle::update_head(){
+//     direction = tail.minus(position);
+//     head = position.sum(direction);
+//     direction.normalize();
+// }
 
 
 void Ring::initialize(double ring_radius){

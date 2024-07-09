@@ -7,7 +7,7 @@ class Ring_particle: public Particle{
     // v2 head;
     // v2 tail;
     Ring_particle();
-    void update_head();
+    // void update_head();
 };
 
 class Ring {
