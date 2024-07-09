@@ -12,7 +12,7 @@
 //     }
 // }
 void Ring::initialize(double ring_radius){
-    n = 2*3.1415926*ring_radius/2/Ring_particleArray[0].radius;
+    n = 2*3.1415926*ring_radius/2/Ring_ParticleArray[0].radius;
     RingParticleArray = new Ring_particle[n];
 }
 
