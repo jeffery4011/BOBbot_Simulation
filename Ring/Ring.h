@@ -4,7 +4,7 @@
 
 class Ring_particle: public Particle{
     public:
-    Ring_particle(){mass = 0.0000001;radius = 0.0001;intertia = 0.5*mass*radius*radius;}
+    Ring_particle(){mass = 0.0000001;radius = 0.0001;inertia = 0.5*mass*radius*radius;}
 };
 
 class Ring {
