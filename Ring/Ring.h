@@ -6,8 +6,7 @@ class Ring_particle: public Particle{
     public:
     v2 head;
     v2 tail;
-    Ring_particle()
-    {mass = 0.0000001;radius = 0.0001;inertia = 0.5*mass*radius*radius;head();tail();}
+    Ring_particle();
     void update_head();
 };
 
