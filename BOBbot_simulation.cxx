@@ -60,28 +60,28 @@ int main(int argc, char* argv[])
   
   // savedata(ParticleArray);
   
-  for (int i =0;i<n;i++){
+  // for (int i =0;i<n;i++){
     
     
-    if (i%2==0){
-      ParticleArray[i].position.x=-0.2;
-      ParticleArray[i].position.y=0;
-      ParticleArray[i].velocity.x=0.1;
-      ParticleArray[i].velocity.y=0;
-      ParticleArray[i].direction.x=1;
-      ParticleArray[i].direction.y=0;
-      ParticleArray[i].angular_velocity=10;
-    }
-    else{
-      ParticleArray[i].position.x=0.2;
-      ParticleArray[i].position.y=0;
-      ParticleArray[i].velocity.x=-0.1;
-      ParticleArray[i].velocity.y=0;
-      ParticleArray[i].direction.x=1;
-      ParticleArray[i].direction.y=0;
-      ParticleArray[i].angular_velocity=10;
-    }
-  }
+  //   if (i%2==0){
+  //     // ParticleArray[i].position.x=-0.2;
+  //     // ParticleArray[i].position.y=0;
+  //     // ParticleArray[i].velocity.x=0.1;
+  //     // ParticleArray[i].velocity.y=0;
+  //     // ParticleArray[i].direction.x=1;
+  //     // ParticleArray[i].direction.y=0;
+  //     ParticleArray[i].angular_velocity=10;
+  //   }
+  //   else{
+  //     // ParticleArray[i].position.x=0.2;
+  //     // ParticleArray[i].position.y=0;
+  //     // ParticleArray[i].velocity.x=-0.1;
+  //     // ParticleArray[i].velocity.y=0;
+  //     // ParticleArray[i].direction.x=1;
+  //     // ParticleArray[i].direction.y=0;
+  //     ParticleArray[i].angular_velocity=10;
+  //   }
+  // }
 
   std::cout<<"Force_Applied"<<std::endl;
   for(int t=0;t<7500;t++){
