@@ -61,6 +61,7 @@ int main(int argc, char* argv[])
   Ring ring;
   ring.initialize(0.02);
   ring.disp_particle();
+  std::cout<<"Ring_particle_num:_"<<ring.n<<std::endl;
 
   
   // savedata(ParticleArray);
