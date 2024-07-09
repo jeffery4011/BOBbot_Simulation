@@ -41,6 +41,7 @@ void Ring::initialize(double ring_radius){
         RingParticleArray[i].update_head(); 
 
     }
+    std::cout<<"Finish Initialization"<<std::endl;
 }
 
 void Ring::disp_particle(){
