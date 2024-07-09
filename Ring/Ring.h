@@ -13,7 +13,7 @@ class Ring_particle: public Particle{
 class Ring {
     public:
     int n = 1000;
-    Particle * RingParticleArray = new Ring_particle[n];
+    Ring_particle * RingParticleArray = new Ring_particle[n];
 
     void initialize(double ring_radius);
     void disp_particle();
