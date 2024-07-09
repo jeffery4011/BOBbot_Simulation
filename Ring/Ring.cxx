@@ -33,7 +33,7 @@ void Ring::initialize(double ring_radius){
     RingParticleArray[0].head.x = ring_radius;
     RingParticleArray[0].tail.y = -1*RingParticleArray[0].radius;
     RingParticleArray[0].tail.x = ring_radius;
-    for (int i =1;i++;i<n){
+    for (int i =1;i<n;i++){
         std::cout<<"Setting up "<<i<<" particle"<<std::endl;
         RingParticleArray[i].position.y = cos(2*3.14159265*i/n);
         RingParticleArray[i].position.x = sin(2*3.14159265*i/n);
