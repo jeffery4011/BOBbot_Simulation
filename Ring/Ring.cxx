@@ -11,7 +11,7 @@
 //         RingParticleArray[i].disp_pos();
 //     }
 // }
-Ring_particle:Ring_particle():head(),tail(){
+Ring_particle::Ring_particle():head(),tail(){
     {mass = 0.0000001;radius = 0.0001;inertia = 0.5*mass*radius*radius;}
 }
 void Ring_particle::update_head(){
