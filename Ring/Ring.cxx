@@ -14,11 +14,11 @@
 Ring_particle::Ring_particle(){
     {mass = 0.0000001;radius = 0.0001;inertia = 0.5*mass*radius*radius;}
 }
-// void Ring_particle::update_head(){
-//     direction = tail.minus(position);
-//     head = position.sum(direction);
-//     direction.normalize();
-// }
+void Ring_particle::update_head(){
+    direction = tail.minus(position);
+    head = position.sum(direction);
+    direction.normalize();
+}
 
 
 void Ring::initialize(double ring_radius){
@@ -33,14 +33,14 @@ void Ring::initialize(double ring_radius){
     RingParticleArray[0].head.x = ring_radius;
     RingParticleArray[0].tail.y = -1*RingParticleArray[0].radius;
     RingParticleArray[0].tail.x = ring_radius;
-    // for (int i =1;i++;i<n){
-    //     RingParticleArray[i].position.y = cos(2*3.14159265*i/n);
-    //     RingParticleArray[i].position.x = sin(2*3.14159265*i/n);
-    //     RingParticleArray[i].tail.x = RingParticleArray[i-1].head.x; 
-    //     RingParticleArray[i].tail.y = RingParticleArray[i-1].head.y;
-    //     // RingParticleArray[i].update_head(); 
+    for (int i =1;i++;i<n){
+        RingParticleArray[i].position.y = cos(2*3.14159265*i/n);
+        RingParticleArray[i].position.x = sin(2*3.14159265*i/n);
+        RingParticleArray[i].tail.x = RingParticleArray[i-1].head.x; 
+        RingParticleArray[i].tail.y = RingParticleArray[i-1].head.y;
+        RingParticleArray[i].update_head(); 
 
-    // }
+    }
 }
 
 void Ring::disp_particle(){
