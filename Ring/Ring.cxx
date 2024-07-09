@@ -36,6 +36,7 @@ void Ring::initialize(double ring_radius){
     for (int i =1;i++;i<n){
         RingParticleArray[i].position.y = cos(2*3.14159265*i/n);
         RingParticleArray[i].position.x = sin(2*3.14159265*i/n);
+        std::cout<<RingParticleArray[i].position.y<<"  "<<RingParticleArray[i].position.x<<std::endl;
         RingParticleArray[i].tail.x = RingParticleArray[i-1].head.x; 
         RingParticleArray[i].tail.y = RingParticleArray[i-1].head.y;
         // RingParticleArray[i].update_head(); 
