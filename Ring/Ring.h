@@ -6,7 +6,7 @@ class Ring_particle: public Particle{
     double mass = 0.0000001;
     double radius = 0.0001;
     double intertia = 0.5*mass*radius*radius;
-}
+};
 
 class Ring {
     public:
