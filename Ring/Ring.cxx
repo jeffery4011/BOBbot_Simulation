@@ -40,14 +40,21 @@ void Ring::initialize(double ring_radius){
         // std::cout<<RingParticleArray[i].position.y<<"  "<<RingParticleArray[i].position.x<<std::endl;
         RingParticleArray[i].tail.x = RingParticleArray[i-1].head.x; 
         RingParticleArray[i].tail.y = RingParticleArray[i-1].head.y;
-        // RingParticleArray[i].update_head(); 
+        RingParticleArray[i].update_head(); 
 
     }
+    // RingParticleArray[n-1].tail.x 
     std::cout<<"Finish Initialization"<<std::endl;
 }
 
 void Ring::disp_particle(){
     for (int i =0;i<n;i++){
         RingParticleArray[i].disp_pos();
+    }
+}
+
+void Ring::update_internal_force(){
+    for (int i=0:i<n;i++){
+
     }
 }
