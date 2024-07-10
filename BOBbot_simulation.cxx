@@ -61,8 +61,8 @@ int main(int argc, char* argv[])
 
   std::ofstream myfile;
   Ring ring;
-  ring.initialize(0.8);
-  ring.disp_particle();
+  ring.initialize(0.2);
+  // ring.disp_particle();
   std::cout<<"Robot_radius: "<<ParticleArray[0].radius<<std::endl;
   std::cout<<"Ring_particle_num:_"<<ring.n<<std::endl;
 
@@ -73,7 +73,7 @@ int main(int argc, char* argv[])
   std::copy(ring.RingParticleArray,ring.RingParticleArray+ring.n,TotalParticleArray+n);
   // savedata(ParticleArray);
 
-  for(int i =1;i<n+ring.n;i++){
+  for(int i =1;i<n+ring.n;i=i+300){
     std::cout<<"Particle_mass: "<<TotalParticleArray[i].mass<<std::endl;
   }
   
