@@ -8,6 +8,7 @@
 #include "interact_force.h"
 #include "solver.h"
 #include "Ring.h"
+#include <algorithm>
 
 int main(int argc, char* argv[])
 {
@@ -66,6 +67,10 @@ int main(int argc, char* argv[])
   std::cout<<"Ring_particle_num:_"<<ring.n<<std::endl;
 
   
+
+  Particle * TotalParticleArray = new Particle[n+ring.n];
+  std::copy(ParticleArray,ParticleArray+n,TotalParticleArray);
+  std::copy(ring.RingParticleArray,ring.RingParticleArray+ring.n,TotalParticleArray+n);
   // savedata(ParticleArray);
   
   // for (int i =0;i<n;i++){
@@ -125,7 +130,7 @@ int main(int argc, char* argv[])
     // myfile.close();
     
 
-  // brute_particle_update_solver(ParticleArray,0.001,0.002,n);
+  // brute_particle_update_solver(ParticleArray,0.001,0,n);
   // }
   
   
