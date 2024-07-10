@@ -73,9 +73,9 @@ int main(int argc, char* argv[])
   std::copy(ring.RingParticleArray,ring.RingParticleArray+ring.n,TotalParticleArray+n);
   // savedata(ParticleArray);
 
-  for(int i =1;i<n+ring.n;i=i+300){
-    std::cout<<"Particle_mass: "<<TotalParticleArray[i].mass<<std::endl;
-  }
+  // for(int i =1;i<n+ring.n;i=i+300){
+  //   std::cout<<"Particle_mass: "<<TotalParticleArray[i].mass<<std::endl;
+  // }
   
   // for (int i =0;i<n;i++){
     
