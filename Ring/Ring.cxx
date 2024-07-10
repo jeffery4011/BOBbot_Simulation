@@ -63,7 +63,7 @@ void Ring::disp_particle(){
 void Ring::update_internal_force(){
     double kr = 100;
     
-    for (int i=1:i<n;i++){
+    for (int i=1;i<n;i++){
         v2 dis=RingParticleArray[i].pos.minus(RingParticleArray[i-1].pos);
         if (dis.norm() > 2*RingParticleArray[i].radius){
             v2 F = dis.product(kr*(2*RingParticleArray[i].radius - dis.norm()));
