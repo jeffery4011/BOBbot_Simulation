@@ -54,7 +54,7 @@ void Ring::disp_particle(){
 }
 
 void Ring::update_internal_force(){
-    for (int i=0:i<n;i++){
+    // for (int i=0:i<n;i++){
 
-    }
+    // }
 }
