@@ -20,6 +20,11 @@ void Ring_particle::update_head(){
     direction.normalize();
 }
 
+void Ring_particle::apply_internal_force(v2 Force){
+    Internal_Force = Internal_Force.sum(Force);
+
+}
+
 
 void Ring::initialize(double ring_radius){
     // std::cout<<"Ring_particle_radius: "<<RingParticleArray[0].radius<<std::endl;
@@ -53,10 +58,7 @@ void Ring::disp_particle(){
     }
 }
 
-void Ring::apply_internal_force(v2 Force){
-    Internal_Force = Internal_Force.sum(Force);
 
-}
 
 void Ring::update_internal_force(){
     double kr = 100;

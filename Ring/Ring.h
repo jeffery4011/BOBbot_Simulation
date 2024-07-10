@@ -8,6 +8,7 @@ class Ring_particle: public Particle{
     // v2 tail;
     Ring_particle();
     void update_head();
+    void apply_internal_force(v2 Force);
 };
 
 class Ring {
@@ -17,7 +18,7 @@ class Ring {
 
     void initialize(double ring_radius);
     void disp_particle();
-    void apply_internal_force(v2 Force);
+    // void apply_internal_force(v2 Force);
     void update_internal_force();
 
 };
