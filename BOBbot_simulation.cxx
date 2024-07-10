@@ -100,12 +100,12 @@ int main(int argc, char* argv[])
     myfile.close();
     }
     
-    // for (int i =0;i<n;i++){
-    // myfile.open("BOBbot_"+std::to_string(i)+".txt", std::ios_base::app);
-    // // myfile<<std::setprecision(4)<<std::fixed;
-    // myfile<<ParticleArray[i].position.x<<" "<<ParticleArray[i].position.y<<" "<<ParticleArray[i].direction.x<<" "<<ParticleArray[i].direction.y<<std::endl;
-    // myfile.close();
-    // }
+    for (int i =0;i<n;i++){
+    myfile.open("BOBbot_"+std::to_string(i)+".txt", std::ios_base::app);
+    // myfile<<std::setprecision(4)<<std::fixed;
+    myfile<<ParticleArray[i].position.x<<" "<<ParticleArray[i].position.y<<" "<<ParticleArray[i].direction.x<<" "<<ParticleArray[i].direction.y<<std::endl;
+    myfile.close();
+    }
     //   for (int i =0;i<n;i++){
     // myfile.open("Y.txt", std::ios_base::app);
     // myfile<<std::setprecision(4)<<std::fixed;
