@@ -60,7 +60,7 @@ int main(int argc, char* argv[])
 
   std::ofstream myfile;
   Ring ring;
-  ring.initialize(0.02);
+  ring.initialize(0.8);
   ring.disp_particle();
   std::cout<<"Robot_radius: "<<ParticleArray[0].radius<<std::endl;
   std::cout<<"Ring_particle_num:_"<<ring.n<<std::endl;
