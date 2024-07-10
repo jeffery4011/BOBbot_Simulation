@@ -75,7 +75,7 @@ int main(int argc, char* argv[])
   std::copy(ParticleArray,ParticleArray+n,TotalParticleArray);
   std::copy(ring.RingParticleArray,ring.RingParticleArray+ring.n,TotalParticleArray+n);
   for (int i =0;i<ring.n;i++){
-    ring.RingParticleArray[i].pos.x = ring.RingParticleArray[i].pos.x +1;
+    ring.RingParticleArray[i].position.x = ring.RingParticleArray[i].position.x +1;
   }
 
   for (int i =0;i<n+ring.n;i++){
