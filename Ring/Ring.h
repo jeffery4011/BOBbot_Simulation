@@ -17,6 +17,7 @@ class Ring {
 
     void initialize(double ring_radius);
     void disp_particle();
+    void apply_internal_force(v2 Force);
     void update_internal_force();
 
 };

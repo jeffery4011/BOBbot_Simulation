@@ -65,12 +65,27 @@ int main(int argc, char* argv[])
   // ring.disp_particle();
   std::cout<<"Robot_radius: "<<ParticleArray[0].radius<<std::endl;
   std::cout<<"Ring_particle_num:_"<<ring.n<<std::endl;
-
+  myfile.open("Ring_num.txt", std::ios_base::app);
+    // myfile<<std::setprecision(4)<<std::fixed;
+  myfile<<ring.n<<std::endl;
+  myfile.close();
   
 
   Particle * TotalParticleArray = new Particle[n+ring.n];
   std::copy(ParticleArray,ParticleArray+n,TotalParticleArray);
   std::copy(ring.RingParticleArray,ring.RingParticleArray+ring.n,TotalParticleArray+n);
+  for (int i =0;i<ring.n;i++){
+    ring.RingParticleArray[i].pos.x = ring.RingParticleArray[i].pos.x +1;
+  }
+
+  for (int i =0;i<n+ring.n;i++){
+    myfile.open("Ring.txt", std::ios_base::app);
+    // myfile<<std::setprecision(4)<<std::fixed;
+    myfile<<TotalParticleArray[i].position.x<<" "<<TotalParticleArray[i].position.y<<std::endl;
+    myfile.close();
+  }
+
+
   // savedata(ParticleArray);
 
   // for(int i =1;i<n+ring.n;i=i+300){
@@ -102,19 +117,19 @@ int main(int argc, char* argv[])
 
   // std::cout<<"Force_Applied"<<std::endl;
   // for(int t=0;t<7500;t++){
-    for (int i =0;i<ring.n;i++){
-    myfile.open("Ring.txt", std::ios_base::app);
-    // myfile<<std::setprecision(4)<<std::fixed;
-    myfile<<ring.RingParticleArray[i].position.x<<" "<<ring.RingParticleArray[i].position.y<<std::endl;
-    myfile.close();
-    }
+    // for (int i =0;i<ring.n;i++){
+    // myfile.open("Ring.txt", std::ios_base::app);
+    // // myfile<<std::setprecision(4)<<std::fixed;
+    // myfile<<ring.RingParticleArray[i].position.x<<" "<<ring.RingParticleArray[i].position.y<<std::endl;
+    // myfile.close();
+    // }
     
-    for (int i =0;i<n;i++){
-    myfile.open("BOBbot_"+std::to_string(i)+".txt", std::ios_base::app);
-    // myfile<<std::setprecision(4)<<std::fixed;
-    myfile<<ParticleArray[i].position.x<<" "<<ParticleArray[i].position.y<<" "<<ParticleArray[i].direction.x<<" "<<ParticleArray[i].direction.y<<std::endl;
-    myfile.close();
-    }
+    // for (int i =0;i<n;i++){
+    // myfile.open("BOBbot_"+std::to_string(i)+".txt", std::ios_base::app);
+    // // myfile<<std::setprecision(4)<<std::fixed;
+    // myfile<<ParticleArray[i].position.x<<" "<<ParticleArray[i].position.y<<" "<<ParticleArray[i].direction.x<<" "<<ParticleArray[i].direction.y<<std::endl;
+    // myfile.close();
+    // }
     //   for (int i =0;i<n;i++){
     // myfile.open("Y.txt", std::ios_base::app);
     // myfile<<std::setprecision(4)<<std::fixed;
