@@ -64,7 +64,7 @@ int main(int argc, char* argv[])
     vector_particle_array.push_back(std::make_shared<Particle>());
     std::cout<<vector_particle_array[i]->position.x<<std::endl;
   }
-  
+  vector_particle_array[0] = std::make_shared<Particle>();
 
   //End of Check Overlapping
 
