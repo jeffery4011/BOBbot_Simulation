@@ -62,11 +62,7 @@ void Damping_Shear_Force(Particle& ParticleA, Particle& ParticleB,v2 collision_p
     
 
 }
-
-void External_Force_update(Particle *ParticleArray,const double h,const int Num_of_Particle){
-    
-    // int Num_of_Particle = sizeof(ParticleArray)/sizeof(ParticleArray[0]);
-    // std::cout<<"NUM of Particle  "<<sizeof(ParticleArray)<<std::endl;
+void Reinitialize_Force(Particle *ParticleArray, const int Num_of_Particle){
     for(int i =0;i<Num_of_Particle;i++){
         ParticleArray[i].External_Force.x=0;
         ParticleArray[i].External_Force.y=0;
@@ -75,6 +71,20 @@ void External_Force_update(Particle *ParticleArray,const double h,const int Num_
         ParticleArray[i].External_Torque = 0;
         ParticleArray[i].Internal_Torque = 0;
     }
+}
+
+void External_Force_update(Particle *ParticleArray,const double h,const int Num_of_Particle){
+    
+    // int Num_of_Particle = sizeof(ParticleArray)/sizeof(ParticleArray[0]);
+    // std::cout<<"NUM of Particle  "<<sizeof(ParticleArray)<<std::endl;
+    // for(int i =0;i<Num_of_Particle;i++){
+    //     ParticleArray[i].External_Force.x=0;
+    //     ParticleArray[i].External_Force.y=0;
+    //     ParticleArray[i].Internal_Force.x=0;
+    //     ParticleArray[i].Internal_Force.y=0;
+    //     ParticleArray[i].External_Torque = 0;
+    //     ParticleArray[i].Internal_Torque = 0;
+    // }
 
 
     for(int i =0;i<Num_of_Particle;i++){
