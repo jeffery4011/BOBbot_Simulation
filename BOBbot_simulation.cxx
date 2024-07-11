@@ -11,6 +11,7 @@
 #include <algorithm>
 #include <list>
 #include <memory>
+#include <vector>
 
 int main(int argc, char* argv[])
 {
