@@ -12,7 +12,6 @@
 #include <list>
 #include <memory>
 #include <vector>
-#include <memory>
 
 int main(int argc, char* argv[])
 {
