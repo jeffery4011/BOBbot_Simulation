@@ -60,7 +60,7 @@ void Ring::initialize(double ring_radius){
 void Ring::disp_particle(){
     for (int i =0;i<n;i++){
         RingParticleArray[i].disp_pos();
-        //RingParticleArray[i].disp_External_Force();
+        RingParticleArray[i].disp_External_Force();
     }
 }
 
@@ -73,8 +73,9 @@ void Ring::update_internal_force(){
         v2 dis=RingParticleArray[i].position.minus(RingParticleArray[i-1].position);
         if (dis.norm() > 2*RingParticleArray[i].radius){
             v2 F = dis.product(kr*(2*RingParticleArray[i].radius - dis.norm()));
-            RingParticleArray[i-1].disp_External_Force();
-            std::cout<<(F.product(-1)).x<<"  "<<(F.product(-1)).y<<std::endl;
+            // RingParticleArray[i-1].disp_External_Force();
+            // std::cout<<(F.product(-1)).x<<"  "<<(F.product(-1)).y<<std::endl;
+            // RingParticleArray[i-1].apply_external_force(RingParticleArray[i-1].position,F);
             RingParticleArray[i-1].External_Force = RingParticleArray[i-1].External_Force.sum(F);
             // RingParticleArray[i-1].disp_External_Force();
             RingParticleArray[i].External_Force = RingParticleArray[i].External_Force.sum(F.product(-1));
@@ -85,7 +86,9 @@ void Ring::update_internal_force(){
     v2 dis=RingParticleArray[0].position.minus(RingParticleArray[n-1].position);
     if (dis.norm() > 2*RingParticleArray[0].radius){
         v2 F = dis.product(kr*(2*RingParticleArray[0].radius - dis.norm()));
-        RingParticleArray[n-1].apply_external_force(RingParticleArray[n-1].position,F);
-        RingParticleArray[0].apply_external_force(RingParticleArray[n-1].position,F.product(-1));
+        // RingParticleArray[n-1].apply_external_force(RingParticleArray[n-1].position,F);
+        // RingParticleArray[0].apply_external_force(RingParticleArray[n-1].position,F.product(-1));
+        RingParticleArray[n-1].External_Force = RingParticleArray[n-1].External_Force.sum(F);
+        RingParticleArray[0].External_Force = RingParticleArray[0].External_Force.sum(F.product(-1));
     }
 }
