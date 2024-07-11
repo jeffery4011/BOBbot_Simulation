@@ -102,6 +102,7 @@ int main(int argc, char* argv[])
   Ring ring;
   ring.initialize(0.02);
   
+  Reinitialize_Force(ring.RingParticleArray,ring.n);
   ring.update_internal_force();
   
   // std::cout<<"Robot_radius: "<<ParticleArray[0].radius<<std::endl;
@@ -191,7 +192,7 @@ int main(int argc, char* argv[])
     // myfile.close();
     
 
-  //brute_particle_update_solver(ring.RingParticleArray,0.001,0,ring.n);
+  brute_particle_update_solver(ring.RingParticleArray,0.001,0,ring.n);
   ring.disp_particle();
   // }
   
