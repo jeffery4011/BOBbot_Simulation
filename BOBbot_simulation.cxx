@@ -62,7 +62,7 @@ int main(int argc, char* argv[])
 
   for(int i=0;i<n;i++){
     vector_particle_array.push_back(std::make_shared<Particle>());
-    std::cout<<vector_particle_array[i].position.x<<std::endl;
+    std::cout<<vector_particle_array[i]->position.x<<std::endl;
   }
   
 
