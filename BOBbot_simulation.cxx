@@ -98,10 +98,10 @@ int main(int argc, char* argv[])
 
   //End of Check Overlapping
 
-  // std::ofstream myfile;
-  // Ring ring;
-  // ring.initialize(0.2);
-  // // ring.disp_particle();
+  std::ofstream myfile;
+  Ring ring;
+  ring.initialize(0.2);
+  ring.disp_particle();
   // std::cout<<"Robot_radius: "<<ParticleArray[0].radius<<std::endl;
   // std::cout<<"Ring_particle_num:_"<<ring.n<<std::endl;
   // myfile.open("Ring_num.txt", std::ios_base::app);
