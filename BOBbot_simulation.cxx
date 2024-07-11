@@ -9,6 +9,8 @@
 #include "solver.h"
 #include "Ring.h"
 #include <algorithm>
+#include <list>
+#include <memory>
 
 int main(int argc, char* argv[])
 {
@@ -72,6 +74,7 @@ int main(int argc, char* argv[])
   
 
   Particle * TotalParticleArray = new Particle[n+ring.n];
+  std::vector<std::shared_ptr<Particle>> SumParticleArray;
   std::copy(ParticleArray,ParticleArray+n,TotalParticleArray);
   std::copy(ring.RingParticleArray,ring.RingParticleArray+ring.n,TotalParticleArray+n);
   for (int i =0;i<ring.n;i++){
