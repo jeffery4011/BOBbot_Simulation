@@ -50,6 +50,7 @@ void Ring::initialize(double ring_radius){
         RingParticleArray[i].External_Force.x=0;
         RingParticleArray[i].External_Force.y=0;
         RingParticleArray[i].update_head(); 
+        RingParticleArray[i].disp_External_Force();
 
     }
     // RingParticleArray[n-1].tail.x 
