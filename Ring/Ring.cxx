@@ -38,6 +38,8 @@ void Ring::initialize(double ring_radius){
     RingParticleArray[0].head.y = ring_radius;
     RingParticleArray[0].tail.x = -1*RingParticleArray[0].radius;
     RingParticleArray[0].tail.y = ring_radius;
+    RingParticleArray[0].External_Force.x=0;
+    RingParticleArray[0].External_Force.y=0;
     for (int i =1;i<n;i++){
         // std::cout<<"Setting up "<<i<<" particle"<<std::endl;
         RingParticleArray[i].position.y = ring_radius*cos(2*3.14159265*i/n);
@@ -45,6 +47,8 @@ void Ring::initialize(double ring_radius){
         // std::cout<<RingParticleArray[i].position.y<<"  "<<RingParticleArray[i].position.x<<std::endl;
         RingParticleArray[i].tail.x = RingParticleArray[i-1].head.x; 
         RingParticleArray[i].tail.y = RingParticleArray[i-1].head.y;
+        RingParticleArray[i].External_Force.x=0;
+        RingParticleArray[i].External_Force.y=0;
         RingParticleArray[i].update_head(); 
 
     }
