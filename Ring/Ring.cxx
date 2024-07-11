@@ -50,7 +50,7 @@ void Ring::initialize(double ring_radius){
         RingParticleArray[i].External_Force.x=0;
         RingParticleArray[i].External_Force.y=0;
         RingParticleArray[i].update_head(); 
-        RingParticleArray[i].disp_External_Force();
+        // RingParticleArray[i].disp_External_Force();
 
     }
     // RingParticleArray[n-1].tail.x 
@@ -74,7 +74,7 @@ void Ring::update_internal_force(){
         if (dis.norm() > 2*RingParticleArray[i].radius){
             v2 F = dis.product(kr*(2*RingParticleArray[i].radius - dis.norm()));
             RingParticleArray[i-1].disp_External_Force();
-            std::cout<<F.x<<"  "<<F.y<<std::endl;
+            std::cout<<(F.product(-1)).x<<"  "<<(F.product(-1)).y<<std::endl;
             RingParticleArray[i-1].apply_external_force(RingParticleArray[i-1].position,F);
             // RingParticleArray[i-1].disp_External_Force();
             RingParticleArray[i].apply_external_force(RingParticleArray[i].position,F.product(-1));
