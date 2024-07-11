@@ -103,7 +103,7 @@ int main(int argc, char* argv[])
   ring.initialize(0.02);
   
   ring.update_internal_force();
-  ring.disp_particle();
+  
   // std::cout<<"Robot_radius: "<<ParticleArray[0].radius<<std::endl;
   // std::cout<<"Ring_particle_num:_"<<ring.n<<std::endl;
   // myfile.open("Ring_num.txt", std::ios_base::app);
@@ -191,7 +191,8 @@ int main(int argc, char* argv[])
     // myfile.close();
     
 
-  // brute_particle_update_solver(ParticleArray,0.001,0,n);
+  brute_particle_update_solver(ParticleArray,0.001,0,n);
+  ring.disp_particle();
   // }
   
   
