@@ -61,7 +61,7 @@ int main(int argc, char* argv[])
   }std::cout<<"All Robots have been placed!"<<std::endl;
 
   for(int i=0;i<n;i++){
-    vector_particle_array.pushback(std::make_shared<Particle>());
+    vector_particle_array.push_back(std::make_shared<Particle>());
   }
   
 
