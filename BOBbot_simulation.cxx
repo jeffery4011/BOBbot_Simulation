@@ -59,6 +59,10 @@ int main(int argc, char* argv[])
     }
     place_index++;
   }std::cout<<"All Robots have been placed!"<<std::endl;
+
+  for(int i=0;i<n;i++){
+    vector_particle_array.pushback(std::make_shared<Particle>());
+  }
   
 
   //End of Check Overlapping
