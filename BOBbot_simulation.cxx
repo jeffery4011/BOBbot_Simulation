@@ -32,39 +32,8 @@ int main(int argc, char* argv[])
   int max_num_of_try = 10000;
   int place_index = 1;
   int num_of_try = 0;
-  // while (place_index <n){
-  //   std::cout<<"Placing "<<place_index<<"th Particle"<<std::endl;
-  //   num_of_try = 0;
-  //   bool place_success = 0;
-  //   while (! place_success){
-  //     std::cout<<"Try "<<num_of_try<<"th time"<<std::endl;
-  //     int contact_index = 0;
-  //       while (contact_index<place_index){
-        
-  //         if (contact(ParticleArray[contact_index],ParticleArray[place_index])){
-  //           num_of_try++;
-  //           ParticleArray[place_index] = Particle();
-  //           break;
-  //         }
-  //         contact_index++;
-  //       }
-        
-  //       if (contact_index == place_index){
-  //         place_success =1;
-  //       }
-  //       if (num_of_try == max_num_of_try){
-  //         std::cout<<"Over Crowded! Decrease the number of robot or vary the distribution parameter!"<<std::endl;
-  //         return 0;
-  //       }
-  //   }
-  //   place_index++;
-  // }std::cout<<"All Robots have been placed!"<<std::endl;
-
-
-  vector_particle_array.push_back(std::make_shared<Particle>());
   while (place_index <n){
     std::cout<<"Placing "<<place_index<<"th Particle"<<std::endl;
-    vector_particle_array.push_back(std::make_shared<Particle>());
     num_of_try = 0;
     bool place_success = 0;
     while (! place_success){
@@ -72,9 +41,9 @@ int main(int argc, char* argv[])
       int contact_index = 0;
         while (contact_index<place_index){
         
-          if (contact(*(vector_particle_array[contact_index]),*(vector_particle_array[place_index]))){
+          if (contact(ParticleArray[contact_index],ParticleArray[place_index])){
             num_of_try++;
-            vector_particle_array[0] = std::make_shared<Particle>();
+            ParticleArray[place_index] = Particle();
             break;
           }
           contact_index++;
@@ -88,13 +57,44 @@ int main(int argc, char* argv[])
           return 0;
         }
     }
-  }
-  for(int i=0;i<n;i++){
-    vector_particle_array.push_back(std::make_shared<Particle>());
-    std::cout<<vector_particle_array[i]->position.x<<std::endl;
-  }
-  vector_particle_array[0] = std::make_shared<Particle>();
-  std::cout<<vector_particle_array[0]->position.x<<std::endl;
+    place_index++;
+  }std::cout<<"All Robots have been placed!"<<std::endl;
+
+
+  // vector_particle_array.push_back(std::make_shared<Particle>());
+  // while (place_index <n){
+  //   std::cout<<"Placing "<<place_index<<"th Particle"<<std::endl;
+  //   vector_particle_array.push_back(std::make_shared<Particle>());
+  //   num_of_try = 0;
+  //   bool place_success = 0;
+  //   while (! place_success){
+  //     std::cout<<"Try "<<num_of_try<<"th time"<<std::endl;
+  //     int contact_index = 0;
+  //       while (contact_index<place_index){
+        
+  //         if (contact(*(vector_particle_array[contact_index]),*(vector_particle_array[place_index]))){
+  //           num_of_try++;
+  //           vector_particle_array[0] = std::make_shared<Particle>();
+  //           break;
+  //         }
+  //         contact_index++;
+  //       }
+        
+  //       if (contact_index == place_index){
+  //         place_success =1;
+  //       }
+  //       if (num_of_try == max_num_of_try){
+  //         std::cout<<"Over Crowded! Decrease the number of robot or vary the distribution parameter!"<<std::endl;
+  //         return 0;
+  //       }
+  //   }
+  // }
+  // for(int i=0;i<n;i++){
+  //   vector_particle_array.push_back(std::make_shared<Particle>());
+  //   std::cout<<vector_particle_array[i]->position.x<<std::endl;
+  // }
+  // vector_particle_array[0] = std::make_shared<Particle>();
+  // std::cout<<vector_particle_array[0]->position.x<<std::endl;
 
   //End of Check Overlapping
 
