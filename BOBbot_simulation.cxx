@@ -194,7 +194,7 @@ int main(int argc, char* argv[])
     Reinitialize_Force(ring.RingParticleArray,ring.n);
     ring.update_internal_force();
     brute_particle_update_solver(ring.RingParticleArray,0.001,0,ring.n);
-    std::cout<<ring.RingParticleArray[0].x<<" "<<ring.RingParticleArray[0].y<<std::endl;
+    std::cout<<ring.RingParticleArray[0].position.x<<" "<<ring.RingParticleArray[0].position.y<<std::endl;
   }
   // brute_particle_update_solver(ring.RingParticleArray,0.001,0,ring.n);
   // ring.disp_particle();
