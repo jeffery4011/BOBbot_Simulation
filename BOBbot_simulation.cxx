@@ -102,7 +102,7 @@ int main(int argc, char* argv[])
   Ring ring;
   ring.initialize(0.02);
   
-  //ring.update_internal_force();
+  ring.update_internal_force();
   
   // std::cout<<"Robot_radius: "<<ParticleArray[0].radius<<std::endl;
   // std::cout<<"Ring_particle_num:_"<<ring.n<<std::endl;
