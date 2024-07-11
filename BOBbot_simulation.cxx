@@ -100,10 +100,9 @@ int main(int argc, char* argv[])
 
   std::ofstream myfile;
   Ring ring;
-  ring.initialize(0.02);
+  ring.initialize(0.2);
   
-  Reinitialize_Force(ring.RingParticleArray,ring.n);
-  ring.update_internal_force();
+  
   
   // std::cout<<"Robot_radius: "<<ParticleArray[0].radius<<std::endl;
   // std::cout<<"Ring_particle_num:_"<<ring.n<<std::endl;
@@ -190,10 +189,14 @@ int main(int argc, char* argv[])
     // myfile<<std::setprecision(4)<<std::fixed;
     // myfile<<ParticleArray[i].direction.y<<std::endl;
     // myfile.close();
-    
-
-  brute_particle_update_solver(ring.RingParticleArray,0.001,0,ring.n);
-  ring.disp_particle();
+  // ring.RingParticleArray[0]  
+  for (int t=0;t<7500;t++){
+    Reinitialize_Force(ring.RingParticleArray,ring.n);
+    ring.update_internal_force();
+    brute_particle_update_solver(ring.RingParticleArray,0.001,0,ring.n);
+  }
+  // brute_particle_update_solver(ring.RingParticleArray,0.001,0,ring.n);
+  // ring.disp_particle();
   // }
   
   
