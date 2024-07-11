@@ -72,7 +72,7 @@ int main(int argc, char* argv[])
       int contact_index = 0;
         while (contact_index<place_index){
         
-          if (contact(vector_particle_array[contact_index],vector_particle_array[place_index])){
+          if (contact(*(vector_particle_array[contact_index]),*(vector_particle_array[place_index]))){
             num_of_try++;
             vector_particle_array[0] = std::make_shared<Particle>();
             break;
