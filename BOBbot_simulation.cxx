@@ -24,6 +24,7 @@ int main(int argc, char* argv[])
     n = inputValue;
   }
   Particle * ParticleArray = new Particle[n];
+  std::vector<std::shared_ptr<Particle>> vector_particle_array; 
   
   
   
