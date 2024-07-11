@@ -101,8 +101,9 @@ int main(int argc, char* argv[])
   std::ofstream myfile;
   Ring ring;
   ring.initialize(0.2);
-  ring.disp_particle();
+  
   ring.update_internal_force();
+  ring.disp_particle();
   // std::cout<<"Robot_radius: "<<ParticleArray[0].radius<<std::endl;
   // std::cout<<"Ring_particle_num:_"<<ring.n<<std::endl;
   // myfile.open("Ring_num.txt", std::ios_base::app);
