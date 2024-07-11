@@ -38,7 +38,7 @@ void Damping_Shear_Force(Particle& ParticleA, Particle& ParticleB,v2 collision_p
     v2 relative_velocity = ParticleA_point_Velocity.minus(ParticleB_point_Velocity);
     ParticleA.apply_external_force(collision_position,relative_velocity.product(-1*eta));
     ParticleB.apply_external_force(collision_position,relative_velocity.product(1*eta));
-    std::cout<<"PA relative Force direction: "<< relative_velocity.product(-1*eta).x<<"  "<<relative_velocity.product(-1*eta).y<<std::endl;
+    //std::cout<<"PA relative Force direction: "<< relative_velocity.product(-1*eta).x<<"  "<<relative_velocity.product(-1*eta).y<<std::endl;
     // ParticleA.disp_External_Force();
     // ParticleB.disp_External_Force();
     
@@ -55,7 +55,7 @@ void Damping_Shear_Force(Particle& ParticleA, Particle& ParticleB,v2 collision_p
     // std::cout<<"Relative_tanget_velocity: "<< ParticleA.External_Force.x<<"   "<<ParticleA.Exteranl_Force.y<<std::endl;
     
     double Force_norm = abs(relative_velocity_radius.dot(ParticleA.External_Force.sum(ParticleA.Internal_Force)));
-    std::cout<<"Force_norm:  "<<Force_norm<<std::endl;
+    //std::cout<<"Force_norm:  "<<Force_norm<<std::endl;
     ParticleA.apply_external_force(collision_position,relative_tang_velocity.product(ParticleA.friction_coefficient*Force_norm));
     ParticleA.apply_external_force(collision_position,relative_tang_velocity.product(-1*ParticleA.friction_coefficient*Force_norm));
     
@@ -97,11 +97,11 @@ void External_Force_update(Particle *ParticleArray,const double h,const int Num_
                 Damping_Shear_Force(ParticleArray[i],ParticleArray[j],collision_position);
                 Repulsive_Force(ParticleArray[i],ParticleArray[j],distance,direction,collision_position,h);
                 // ParticleArray[i].disp_External_Torque();
-                ParticleArray[i].disp_vel();
-                ParticleArray[i].disp_angular_vel();
+                // ParticleArray[i].disp_vel();
+                // ParticleArray[i].disp_angular_vel();
 
                 
-                ParticleArray[i].disp_External_Force();
+                // ParticleArray[i].disp_External_Force();
                 // ParticleArray[j].disp_External_Force();
             }
         }
