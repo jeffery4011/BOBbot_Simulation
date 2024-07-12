@@ -190,7 +190,7 @@ int main(int argc, char* argv[])
     // myfile<<ParticleArray[i].direction.y<<std::endl;
     // myfile.close();
   // ring.RingParticleArray[0]  
-  for (int t=0;t<7500;t++){
+  for (int t=0;t<750;t++){
     Reinitialize_Force(ring.RingParticleArray,ring.n);
     ring.update_internal_force();
     brute_particle_update_solver(ring.RingParticleArray,0.001,0,ring.n);
