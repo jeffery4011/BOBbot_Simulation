@@ -71,8 +71,10 @@ void Ring::update_internal_force(){
     
     for (int i=1;i<n;i++){
         v2 dis=RingParticleArray[i].position.minus(RingParticleArray[i-1].position);
-        if (dis.norm() > 2*RingParticleArray[i].radius){
-            v2 F = dis.product(kr*(2*RingParticleArray[i].radius - dis.norm()));
+        double distance=dis.norm();
+        dis.normalize();
+        if (distance > 2*RingParticleArray[i].radius){
+            v2 F = dis.product(kr*(2*RingParticleArray[i].radius - distance));
             // RingParticleArray[i-1].disp_External_Force();
             // std::cout<<(F.product(-1)).x<<"  "<<(F.product(-1)).y<<std::endl;
             // RingParticleArray[i-1].apply_external_force(RingParticleArray[i-1].position,F);
@@ -84,8 +86,10 @@ void Ring::update_internal_force(){
 
     }
     v2 dis=RingParticleArray[0].position.minus(RingParticleArray[n-1].position);
-    if (dis.norm() > 2*RingParticleArray[0].radius){
-        v2 F = dis.product(kr*(2*RingParticleArray[0].radius - dis.norm()));
+    double distance=dis.norm();
+    dis.normalize();
+    if (distance > 2*RingParticleArray[0].radius){
+        v2 F = dis.product(kr*(2*RingParticleArray[0].radius - distance));
         // RingParticleArray[n-1].apply_external_force(RingParticleArray[n-1].position,F);
         // RingParticleArray[0].apply_external_force(RingParticleArray[n-1].position,F.product(-1));
         RingParticleArray[n-1].External_Force = RingParticleArray[n-1].External_Force.sum(F);
