@@ -192,7 +192,7 @@ int main(int argc, char* argv[])
   // ring.RingParticleArray[0]  
   for (int t=0;t<100;t++){
     Reinitialize_Force(ring.RingParticleArray,ring.n);
-    //ring.update_internal_force();
+    ring.update_internal_force();
     brute_particle_update_solver(ring.RingParticleArray,0.001,0,ring.n);
     // for (int i =0;i<ring.n;i++){
     // myfile.open("Ring_.txt", std::ios_base::app);
