@@ -95,4 +95,6 @@ void Ring::update_internal_force(){
         RingParticleArray[n-1].External_Force = RingParticleArray[n-1].External_Force.sum(F);
         RingParticleArray[0].External_Force = RingParticleArray[0].External_Force.sum(F.product(-1));
     }
+    std::cout<<"Spring_Force"<<std::endl;
+    RingParticleArray[0].disp_External_Force();
 }
