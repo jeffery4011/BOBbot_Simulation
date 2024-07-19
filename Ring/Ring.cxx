@@ -67,7 +67,7 @@ void Ring::disp_particle(){
 
 
 void Ring::update_internal_force(){
-    double kr = 0;
+    double kr = 0.001;
     
     for (int i=1;i<n;i++){
         v2 dis=RingParticleArray[i].position.minus(RingParticleArray[i-1].position);
