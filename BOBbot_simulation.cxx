@@ -190,10 +190,17 @@ int main(int argc, char* argv[])
     // myfile<<ParticleArray[i].direction.y<<std::endl;
     // myfile.close();
   // ring.RingParticleArray[0]  
-  for (int t=0;t<750;t++){
+  for (int t=0;t<100;t++){
     Reinitialize_Force(ring.RingParticleArray,ring.n);
-    ring.update_internal_force();
+    //ring.update_internal_force();
     brute_particle_update_solver(ring.RingParticleArray,0.001,0,ring.n);
+    // for (int i =0;i<ring.n;i++){
+    // myfile.open("Ring_.txt", std::ios_base::app);
+    // // myfile<<std::setprecision(4)<<std::fixed;
+    // myfile<<ring.RingParticleArray[i].position.x<<" "<<ring.RingParticleArray[i].position.y<<std::endl;
+    // myfile.close();
+    // }
+    
     ring.RingParticleArray[0].disp_External_Force();
   }
   // brute_particle_update_solver(ring.RingParticleArray,0.001,0,ring.n);
