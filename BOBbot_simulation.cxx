@@ -101,7 +101,7 @@ int main(int argc, char* argv[])
   std::ofstream myfile;
   Ring ring;
   ring.initialize(0.002);
-  ring.RingParticleArra[0].velocity.y=-0.01;
+  ring.RingParticleArray[0].velocity.y=-0.01;
   
   
   // std::cout<<"Robot_radius: "<<ParticleArray[0].radius<<std::endl;
