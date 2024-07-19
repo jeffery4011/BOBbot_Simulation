@@ -200,10 +200,10 @@ int main(int argc, char* argv[])
     myfileY.close();
     }
     myfileX.open("Ring_X.txt", std::ios_base::app);
-    myfileX<<<<std::endl;
+    myfileX<<std::endl;
     myfileX.close();
     myfileY.open("Ring_Y.txt", std::ios_base::app);
-    myfileY<<<<std::endl;
+    myfileY<<std::endl;
     myfileY.close();
     
     ring.RingParticleArray[0].disp_vel();
