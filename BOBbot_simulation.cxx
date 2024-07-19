@@ -207,6 +207,7 @@ int main(int argc, char* argv[])
     myfileY.close();
     
     ring.RingParticleArray[0].disp_pos();
+    ring.RingParticleArray[0].disp_vel();
     ring.RingParticleArray[0].disp_External_Force();
   }
   // brute_particle_update_solver(ring.RingParticleArray,0.001,0,ring.n);
