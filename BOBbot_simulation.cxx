@@ -101,15 +101,7 @@ int main(int argc, char* argv[])
   std::ofstream myfile;
   Ring ring;
   ring.initialize(0.002);
-  ring.RingParticleArray[0].velocity.y=-0.01;
-  
-  
-  // std::cout<<"Robot_radius: "<<ParticleArray[0].radius<<std::endl;
-  // std::cout<<"Ring_particle_num:_"<<ring.n<<std::endl;
-  // myfile.open("Ring_num.txt", std::ios_base::app);
-  //   // myfile<<std::setprecision(4)<<std::fixed;
-  // myfile<<ring.n<<std::endl;
-  // myfile.close();
+  ring.RingParticleArray[0].velocity.y=-0.001;
   
 
   // Particle * TotalParticleArray = new Particle[n+ring.n];
@@ -190,16 +182,29 @@ int main(int argc, char* argv[])
     // myfile<<ParticleArray[i].direction.y<<std::endl;
     // myfile.close();
   // ring.RingParticleArray[0]  
+
+  std::ofstream myfileX;
+  std::ofstream myfileY;
   for (int t=0;t<100;t++){
     Reinitialize_Force(ring.RingParticleArray,ring.n);
     ring.update_internal_force();
     brute_particle_update_solver(ring.RingParticleArray,0.001,0,ring.n);
-    // for (int i =0;i<ring.n;i++){
-    // myfile.open("Ring_.txt", std::ios_base::app);
-    // // myfile<<std::setprecision(4)<<std::fixed;
-    // myfile<<ring.RingParticleArray[i].position.x<<" "<<ring.RingParticleArray[i].position.y<<std::endl;
-    // myfile.close();
-    // }
+    for (int i =0;i<ring.n;i++){
+    myfileX.open("Ring_X.txt", std::ios_base::app);
+    // myfile<<std::setprecision(4)<<std::fixed;
+    myfileX<<ring.RingParticleArray[i].position.x<<" ";
+    myfileX.close();
+    myfileY.open("Ring_Y.txt", std::ios_base::app);
+    // myfile<<std::setprecision(4)<<std::fixed;
+    myfileY<<ring.RingParticleArray[i].position.y<<" ";
+    myfileY.close();
+    }
+    myfileX.open("Ring_X.txt", std::ios_base::app);
+    myfileX<<<<std::endl;
+    myfileX.close();
+    myfileY.open("Ring_Y.txt", std::ios_base::app);
+    myfileY<<<<std::endl;
+    myfileY.close();
     
     ring.RingParticleArray[0].disp_vel();
   }
