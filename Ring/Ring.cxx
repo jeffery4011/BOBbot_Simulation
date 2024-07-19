@@ -76,7 +76,7 @@ void Ring::update_internal_force(){
         if (distance > 2*RingParticleArray[i].radius){
             v2 F = dis.product(kr*(2*RingParticleArray[i].radius - distance));
             // RingParticleArray[i-1].disp_External_Force();
-            // std::cout<<F.x<<"  "<<F.y<<std::endl;
+            std::cout<<distance<<std::endl;
             // RingParticleArray[i-1].apply_external_force(RingParticleArray[i-1].position,F);
             RingParticleArray[i-1].External_Force = RingParticleArray[i-1].External_Force.sum(F);
             // RingParticleArray[i-1].disp_External_Force();
