@@ -186,9 +186,9 @@ int main(int argc, char* argv[])
   std::ofstream myfileX;
   std::ofstream myfileY;
   for (int t=0;t<100;t++){
-    for (int i =0;i<ring.n;i++){
-      std::cout<<"Particle radius: "<<ring.RingParticleArray[i].radius<<" Particle mass: "<<ring.RingParticleArray[i].mass<<std::endl;
-    }
+    // for (int i =0;i<ring.n;i++){
+    //   std::cout<<"Particle radius: "<<ring.RingParticleArray[i].radius<<" Particle mass: "<<ring.RingParticleArray[i].mass<<std::endl;
+    // }
     Reinitialize_Force(ring.RingParticleArray,ring.n);
     ring.update_internal_force();
     brute_particle_update_solver(ring.RingParticleArray,0.001,0,ring.n);
@@ -209,9 +209,9 @@ int main(int argc, char* argv[])
     myfileY<<std::endl;
     myfileY.close();
     
-    // ring.RingParticleArray[0].disp_pos();
-    // ring.RingParticleArray[0].disp_vel();
-    // ring.RingParticleArray[0].disp_External_Force();
+    ring.RingParticleArray[0].disp_pos();
+    ring.RingParticleArray[0].disp_vel();
+    ring.RingParticleArray[0].disp_External_Force();
   }
   // brute_particle_update_solver(ring.RingParticleArray,0.001,0,ring.n);
   // ring.disp_particle();
