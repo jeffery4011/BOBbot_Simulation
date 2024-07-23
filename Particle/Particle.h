@@ -8,6 +8,7 @@ public:
     double mass = 0.151; //kg
     double radius = 0.04; // m
     double inertia = 0.5*mass*radius*radius;
+    double connect;
     Particle();
     v2 head;
     v2 tail;

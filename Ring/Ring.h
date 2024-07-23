@@ -7,7 +7,7 @@ class Ring_particle: public Particle{
     // v2 head;
     // v2 tail;
     // double string_radius = 0.1;
-    double connect;
+    
     Ring_particle();
     void update_head();
     void apply_internal_force(v2 Force);
