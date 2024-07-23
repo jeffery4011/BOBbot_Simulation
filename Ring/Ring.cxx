@@ -94,7 +94,7 @@ void Ring::update_internal_force(){
     double distance=dis.norm();
     dis.normalize();
     if (distance > 2*RingParticleArray[0].connect){
-        v2 F = dis.product(kr*(2*RingParticleArray[0].connect - distance));
+        v2 F = dis.product(kr*(-2*RingParticleArray[0].connect + distance));
         // RingParticleArray[n-1].apply_external_force(RingParticleArray[n-1].position,F);
         // RingParticleArray[0].apply_external_force(RingParticleArray[n-1].position,F.product(-1));
         RingParticleArray[n-1].External_Force = RingParticleArray[n-1].External_Force.sum(F);
