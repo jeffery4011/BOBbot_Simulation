@@ -12,7 +12,7 @@
 //     }
 // }
 Ring_particle::Ring_particle(){
-    {mass = 0.000005;radius = 0.0001;inertia = 0.5*mass*radius*radius;}
+    {mass = 0.000005;connect_radius =0.0001; radius = 0.0001;inertia = 0.5*mass*radius*radius;}
 }
 void Ring_particle::update_head(){
     direction = tail.minus(position);
