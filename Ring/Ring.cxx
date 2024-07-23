@@ -74,7 +74,7 @@ void Ring::update_internal_force(){
         double distance=dis.norm();
         dis.normalize();
         if (distance > 2*RingParticleArray[i].connect){
-            v2 F = dis.product(kr*(2*RingParticleArray[i].connect - distance));
+            v2 F = dis.product(kr*(-2*RingParticleArray[i].connect + distance));
             if (i==1){
                 dis = RingParticleArray[i].position.minus(RingParticleArray[i-1].position);
                 std::cout<<"Distance: "<<dis.x<<" "<<dis.y<<std::endl;
