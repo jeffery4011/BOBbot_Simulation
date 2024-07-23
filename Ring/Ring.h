@@ -6,7 +6,7 @@ class Ring_particle: public Particle{
     public:
     // v2 head;
     // v2 tail;
-    double connect_radius;
+    // double connect_radius;
     Ring_particle();
     void update_head();
     void apply_internal_force(v2 Force);
