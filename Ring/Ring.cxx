@@ -88,13 +88,13 @@ void Ring::update_internal_force(){
     v2 dis=RingParticleArray[0].position.minus(RingParticleArray[n-1].position);
     double distance=dis.norm();
     dis.normalize();
-    if (distance > 2*RingParticleArray[0].connect){
-        v2 F = dis.product(kr*(2*RingParticleArray[0].connect - distance));
-        // RingParticleArray[n-1].apply_external_force(RingParticleArray[n-1].position,F);
-        // RingParticleArray[0].apply_external_force(RingParticleArray[n-1].position,F.product(-1));
-        RingParticleArray[n-1].External_Force = RingParticleArray[n-1].External_Force.sum(F);
-        RingParticleArray[0].External_Force = RingParticleArray[0].External_Force.sum(F.product(-1));
-    }
+    // if (distance > 2*RingParticleArray[0].connect){
+    //     v2 F = dis.product(kr*(2*RingParticleArray[0].connect - distance));
+    //     // RingParticleArray[n-1].apply_external_force(RingParticleArray[n-1].position,F);
+    //     // RingParticleArray[0].apply_external_force(RingParticleArray[n-1].position,F.product(-1));
+    //     RingParticleArray[n-1].External_Force = RingParticleArray[n-1].External_Force.sum(F);
+    //     RingParticleArray[0].External_Force = RingParticleArray[0].External_Force.sum(F.product(-1));
+    // }
     std::cout<<"Spring_Force"<<std::endl;
     std::cout<<"Particle0:"<<std::endl;
     RingParticleArray[0].disp_pos();
