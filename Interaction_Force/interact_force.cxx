@@ -13,7 +13,7 @@ void Repulsive_Force(Particle& ParticleA, Particle& ParticleB,v2 distance,v2 dir
     double repulsive_distance = ParticleA.radius+ParticleB.radius-distance.norm()+h;
     ParticleA.apply_external_force(collision_position,direction.product((k*repulsive_distance)));
     //std::cout<<"PA Repulsive Distance: " << repulsive_distance<<std::endl;
-    //std::cout<<"PA Repulsive Force: "<< direction.product((k*repulsive_distance)).x<<"  "<<direction.product((k*repulsive_distance)).y<<std::endl;
+    std::cout<<"PA Repulsive Force: "<< direction.product((k*repulsive_distance)).x<<"  "<<direction.product((k*repulsive_distance)).y<<std::endl;
     ParticleB.apply_external_force(collision_position,direction.product(-(k*repulsive_distance)));
     // ParticleA.disp_External_Force();
     // ParticleB.disp_External_Force();
@@ -56,7 +56,7 @@ void Damping_Shear_Force(Particle& ParticleA, Particle& ParticleB,v2 collision_p
     // std::cout<<"Relative_tanget_velocity: "<< ParticleA.External_Force.x<<"   "<<ParticleA.Exteranl_Force.y<<std::endl;
     
     double Force_norm = abs(relative_velocity_radius.dot(ParticleA.External_Force.sum(ParticleA.Internal_Force)));
-    //std::cout<<"Force_norm:  "<<Force_norm<<std::endl;
+    std::cout<<"Dammping Force_norm:  "<<Force_norm<<std::endl;
     ParticleA.apply_external_force(collision_position,relative_tang_velocity.product(ParticleA.friction_coefficient*Force_norm));
     ParticleA.apply_external_force(collision_position,relative_tang_velocity.product(-1*ParticleA.friction_coefficient*Force_norm));
     
