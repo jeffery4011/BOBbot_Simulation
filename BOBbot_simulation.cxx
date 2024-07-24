@@ -185,13 +185,13 @@ int main(int argc, char* argv[])
 
   std::ofstream myfileX;
   std::ofstream myfileY;
-  for (int t=0;t<1000;t++){
+  for (int t=0;t<10000;t++){
     // for (int i =0;i<ring.n;i++){
     //   std::cout<<"Particle radius: "<<ring.RingParticleArray[i].radius<<" Particle mass: "<<ring.RingParticleArray[i].mass<<std::endl;
     // }
     Reinitialize_Force(ring.RingParticleArray,ring.n);
     ring.update_internal_force();
-    brute_particle_update_solver(ring.RingParticleArray,0.001,0,ring.n);
+    brute_particle_update_solver(ring.RingParticleArray,0.0001,0,ring.n);
     for (int i =0;i<ring.n;i++){
     myfileX.open("Ring_X.txt", std::ios_base::app);
     // myfile<<std::setprecision(4)<<std::fixed;
