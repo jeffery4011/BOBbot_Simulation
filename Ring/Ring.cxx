@@ -67,7 +67,7 @@ void Ring::disp_particle(){
 
 
 void Ring::update_internal_force(){
-    double kr = 0.05;
+    double kr = 0.1;//0.05 too loose
 
     
     for (int i=1;i<n;i++){
