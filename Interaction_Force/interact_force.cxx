@@ -32,7 +32,7 @@ void Damping_Shear_Force(Particle& ParticleA, Particle& ParticleB,v2 collision_p
     
     
     // double eta = 0.7; //work for BOBBOt
-    double eta = 0.0003;
+    double eta = 0.0000003;
 
 
     v2 ParticleA_point_Velocity = ParticleA.velocity.sum(particleA_tang_velocity);
