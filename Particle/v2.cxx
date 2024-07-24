@@ -16,8 +16,11 @@ v2::v2(float xIn, float yIn): x(xIn), y(yIn)
 void v2::normalize()
 {
     float t = sqrt(x*x + y*y);
-	x /= t;
-	y /= t;
+    if (t!=0){
+        x /= t;
+	    y /= t;
+    }
+	
 }
 
 double v2::norm()
