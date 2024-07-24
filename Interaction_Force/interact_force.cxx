@@ -8,12 +8,12 @@
 //https://www.sciencedirect.com/science/article/pii/S0020768310002477
 
 void Repulsive_Force(Particle& ParticleA, Particle& ParticleB,v2 distance,v2 direction,v2 collision_position,double h){
-    // double k = 0.001;
-    double k = 0.0000001;
+    double k = 0.001;
+    // double k = 0.0000001;
     double repulsive_distance = ParticleA.radius+ParticleB.radius-distance.norm()+h;
     ParticleA.apply_external_force(collision_position,direction.product((k*repulsive_distance)));
     //std::cout<<"PA Repulsive Distance: " << repulsive_distance<<std::endl;
-    std::cout<<"PA Repulsive Force: "<< direction.product((k*repulsive_distance)).x<<"  "<<direction.product((k*repulsive_distance)).y<<std::endl;
+    //std::cout<<"PA Repulsive Force: "<< direction.product((k*repulsive_distance)).x<<"  "<<direction.product((k*repulsive_distance)).y<<std::endl;
     ParticleB.apply_external_force(collision_position,direction.product(-(k*repulsive_distance)));
     // ParticleA.disp_External_Force();
     // ParticleB.disp_External_Force();
@@ -39,13 +39,13 @@ void Damping_Shear_Force(Particle& ParticleA, Particle& ParticleB,v2 collision_p
     v2 relative_velocity = ParticleA_point_Velocity.minus(ParticleB_point_Velocity);
     ParticleA.apply_external_force(collision_position,relative_velocity.product(-1*eta));
     ParticleB.apply_external_force(collision_position,relative_velocity.product(1*eta));
-    //std::cout<<"PA relative Force direction: "<< relative_velocity.product(-1*eta).x<<"  "<<relative_velocity.product(-1*eta).y<<std::endl;
+    std::cout<<"PA relative velocity Force direction: "<< relative_velocity.product(-1*eta).x<<"  "<<relative_velocity.product(-1*eta).y<<std::endl;
     // ParticleA.disp_External_Force();
     // ParticleB.disp_External_Force();
     
      double kt = 0.2;
     v2 relative_tang_velocity = particleA_tang_velocity.minus(particleB_tang_velocity);
-    // std::cout<<"Relative_tanget_velocity: "<< relative_tang_velocity.x<<"   "<<relative_tang_velocity.y<<std::endl;
+    std::cout<<"Relative_tanget_velocity: "<< relative_tang_velocity.x<<"   "<<relative_tang_velocity.y<<std::endl;
     ParticleA.apply_external_force(collision_position,relative_tang_velocity.product(1*kt));
     ParticleB.apply_external_force(collision_position,relative_tang_velocity.product(-1*kt));
 
