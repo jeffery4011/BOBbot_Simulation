@@ -106,7 +106,9 @@ void External_Force_update(Particle *ParticleArray,const double h,const int Num_
 
                 
                 ParticleArray[i].disp_External_Force();
+                ParticleArray[i].disp_vel();
                 ParticleArray[j].disp_External_Force();
+                ParticleArray[j].disp_vel();
             }
         }
     }
