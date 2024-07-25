@@ -114,5 +114,5 @@ void Ring::update_internal_force(){
     // RingParticleArray[1].disp_External_Force();
     std::cout<<"Particle_end:"<<std::endl;
     RingParticleArray[n-1].disp_pos();
-    // RingParticleArray[ring.n-1].disp_External_Force();
+    //RingParticleArray[ring.n-1].disp_External_Force();
 }
