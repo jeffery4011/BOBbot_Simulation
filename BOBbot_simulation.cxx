@@ -211,7 +211,8 @@ int main(int argc, char* argv[])
     
 
     ring.RingParticleArray[0].velocity.y=0.01;
-    // ring.RingParticleArray[0].disp_pos();
+    ring.RingParticleArray[1].disp_pos();
+    ring.RingParticleArray[ring.n-1].disp_pos();
     // ring.RingParticleArray[0].disp_vel();
     // ring.RingParticleArray[0].disp_External_Force();
   }

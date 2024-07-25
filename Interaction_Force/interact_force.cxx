@@ -12,8 +12,8 @@ void Repulsive_Force(Particle& ParticleA, Particle& ParticleB,v2 distance,v2 dir
     double k = 0.5;
     double repulsive_distance = ParticleA.radius+ParticleB.radius-distance.norm()+h;
     ParticleA.apply_external_force(collision_position,direction.product((k*repulsive_distance)));
-    std::cout<<"PA Repulsive Distance: " << repulsive_distance<<std::endl;
-    std::cout<<"PA Repulsive acceleration: "<< direction.product((k*repulsive_distance/ParticleA.mass)).x<<"  "<<direction.product((k*repulsive_distance/ParticleA.mass)).y<<std::endl;
+    //std::cout<<"PA Repulsive Distance: " << repulsive_distance<<std::endl;
+    //std::cout<<"PA Repulsive acceleration: "<< direction.product((k*repulsive_distance/ParticleA.mass)).x<<"  "<<direction.product((k*repulsive_distance/ParticleA.mass)).y<<std::endl;
     ParticleB.apply_external_force(collision_position,direction.product(-(k*repulsive_distance)));
     // ParticleA.disp_External_Force();
     // ParticleB.disp_External_Force();
@@ -38,10 +38,10 @@ void Damping_Shear_Force(Particle& ParticleA, Particle& ParticleB,v2 collision_p
     v2 ParticleA_point_Velocity = ParticleA.velocity.sum(particleA_tang_velocity);
     v2 ParticleB_point_Velocity = ParticleB.velocity.sum(particleB_tang_velocity);
     v2 relative_velocity = ParticleA_point_Velocity.minus(ParticleB_point_Velocity);
-    std::cout<<"PA relative velocity "<< relative_velocity.x<<"  "<<relative_velocity.y<<std::endl;
+    //std::cout<<"PA relative velocity "<< relative_velocity.x<<"  "<<relative_velocity.y<<std::endl;
     ParticleA.apply_external_force(collision_position,relative_velocity.product(-1*eta));
     ParticleB.apply_external_force(collision_position,relative_velocity.product(1*eta));
-    std::cout<<"PA relative velocity Force acceleration: "<< relative_velocity.product(-1*eta).x/ParticleA.mass<<"  "<<relative_velocity.product(-1*eta).y/ParticleA.mass<<std::endl;
+    //std::cout<<"PA relative velocity Force acceleration: "<< relative_velocity.product(-1*eta).x/ParticleA.mass<<"  "<<relative_velocity.product(-1*eta).y/ParticleA.mass<<std::endl;
     // ParticleA.disp_External_Force();
     // ParticleB.disp_External_Force();
     
