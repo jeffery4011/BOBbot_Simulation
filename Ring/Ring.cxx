@@ -12,7 +12,7 @@
 //     }
 // }
 Ring_particle::Ring_particle(){
-    {mass = 0.000005;connect=0.0001; radius = 0.001*connect;inertia = 50000;} //NO ROTATION//0.5*mass*radius*radius;}
+    {mass = 0.000005;connect=0.0001; radius = 0.1*connect;inertia = 50000;} //NO ROTATION//0.5*mass*radius*radius;}
 }
 void Ring_particle::update_head(){
     direction = tail.minus(position);
@@ -67,7 +67,7 @@ void Ring::disp_particle(){
 
 
 void Ring::update_internal_force(){
-    double kr = 2;//0.2;//0.05 too loose//0.1 too loose for active
+    double kr = 0.4;//0.2;//0.05 too loose//0.1 too loose for active
 
     
     for (int i=1;i<n;i++){
