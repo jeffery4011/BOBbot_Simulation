@@ -93,7 +93,7 @@ void External_Force_update(Particle *ParticleArray,const double h,const int Num_
     for(int i =0;i<Num_of_Particle;i++){
         if (ParticleArray[i].velocity.norm()!= 0){
             v2 dir = ParticleArray[i].velocity.product(1/ParticleArray[i].velocity.norm());
-            ParticleArray[i].External_Force = ParticleArray[i].External_Force.sum(dir.product(-9.8*ParticleArray[i].mass));
+            ParticleArray[i].External_Force = ParticleArray[i].External_Force.sum(dir.product(-9.8*ParticleArray[i].mass*ParticleArray[i].miu));
         }
         for(int j =i+1;j<Num_of_Particle;j++){
             v2 distance = ParticleArray[i].position.minus(ParticleArray[j].position);
