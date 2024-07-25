@@ -211,7 +211,9 @@ int main(int argc, char* argv[])
     
 
     ring.RingParticleArray[0].velocity.y=0.01;
+    std::cout<<"Particle1:"<<std::endl;
     ring.RingParticleArray[1].disp_pos();
+    std::cout<<"Particle_end:"<<std::endl;
     ring.RingParticleArray[ring.n-1].disp_pos();
     // ring.RingParticleArray[0].disp_vel();
     // ring.RingParticleArray[0].disp_External_Force();
