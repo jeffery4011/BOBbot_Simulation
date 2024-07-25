@@ -13,7 +13,7 @@ void Repulsive_Force(Particle& ParticleA, Particle& ParticleB,v2 distance,v2 dir
     double repulsive_distance = ParticleA.radius+ParticleB.radius-distance.norm()+h;
     ParticleA.apply_external_force(collision_position,direction.product((k*repulsive_distance)));
     //std::cout<<"PA Repulsive Distance: " << repulsive_distance<<std::endl;
-    //std::cout<<"PA Repulsive acceleration: "<< direction.product((k*repulsive_distance/ParticleA.mass)).x<<"  "<<direction.product((k*repulsive_distance/ParticleA.mass)).y<<std::endl;
+    std::cout<<"PA Repulsive acceleration: "<< direction.product((k*repulsive_distance/ParticleA.mass)).x<<"  "<<direction.product((k*repulsive_distance/ParticleA.mass)).y<<std::endl;
     ParticleB.apply_external_force(collision_position,direction.product(-(k*repulsive_distance)));
     // ParticleA.disp_External_Force();
     // ParticleB.disp_External_Force();
@@ -95,7 +95,7 @@ void External_Force_update(Particle *ParticleArray,const double h,const int Num_
             v2 distance = ParticleArray[i].position.minus(ParticleArray[j].position);
             // std::cout<<"Distance  "<<distance.norm()<<std::endl;
             if (distance.norm()<(ParticleArray[i].radius+ParticleArray[j].radius+h)){
-                //std::cout<<"Collide between: "<<i<<"  "<<j<<std::endl;
+                std::cout<<"Collide between: "<<i<<"  "<<j<<std::endl;
                 v2 direction = distance.product(1/distance.norm());
                 v2 collision_position = ParticleArray[j].position.sum(direction.product(0.5*distance.norm()));
                 Damping_Shear_Force(ParticleArray[i],ParticleArray[j],collision_position);
