@@ -185,7 +185,7 @@ int main(int argc, char* argv[])
 
   std::ofstream myfileX;
   std::ofstream myfileY;
-  for (int t=0;t<20000;t++){
+  for (int t=0;t<60000;t++){
     // for (int i =0;i<ring.n;i++){
     //   std::cout<<"Particle radius: "<<ring.RingParticleArray[i].radius<<" Particle mass: "<<ring.RingParticleArray[i].mass<<std::endl;
     // }
