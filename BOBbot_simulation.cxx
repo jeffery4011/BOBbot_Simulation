@@ -101,7 +101,7 @@ int main(int argc, char* argv[])
   std::ofstream myfile;
   Ring ring;
   ring.initialize(0.002);
-  ring.RingParticleArray[0].velocity.y=0.01/100;
+  ring.RingParticleArray[0].velocity.y=0.01;
   
 
   // Particle * TotalParticleArray = new Particle[n+ring.n];
@@ -185,7 +185,7 @@ int main(int argc, char* argv[])
 
   std::ofstream myfileX;
   std::ofstream myfileY;
-  for (int t=0;t<5000;t++){
+  for (int t=0;t<20000;t++){
     // for (int i =0;i<ring.n;i++){
     //   std::cout<<"Particle radius: "<<ring.RingParticleArray[i].radius<<" Particle mass: "<<ring.RingParticleArray[i].mass<<std::endl;
     // }
