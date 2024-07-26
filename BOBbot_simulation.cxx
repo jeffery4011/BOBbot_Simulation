@@ -100,7 +100,7 @@ int main(int argc, char* argv[])
 
   std::ofstream myfile;
   Ring ring;
-  ring.initialize(0.002);
+  ring.initialize(0.2);
   ring.RingParticleArray[0].velocity.y=0.01;
   
 
