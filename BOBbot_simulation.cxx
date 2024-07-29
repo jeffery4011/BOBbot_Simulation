@@ -189,7 +189,7 @@ int main(int argc, char* argv[])
     // for (int i =0;i<ring.n;i++){
     //   std::cout<<"Particle radius: "<<ring.RingParticleArray[i].radius<<" Particle mass: "<<ring.RingParticleArray[i].mass<<std::endl;
     // }
-    //std::cout<<"Time Step:" <<t<<std::endl;
+    std::cout<<"Time Step:" <<t<<std::endl;
     Reinitialize_Force(ring.RingParticleArray,ring.n);
     ring.update_internal_force();
     brute_particle_update_solver(ring.RingParticleArray,0.0001,0,ring.n);
