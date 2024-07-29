@@ -75,7 +75,7 @@ void Ring::update_internal_force(){
         double distance=dis.norm();
         dis.normalize();
 
-        v2 velocity_relative = RingParticleArray[i].velocity.minus(RingParticleArray[i].velocity);
+        v2 velocity_relative = RingParticleArray[i].velocity.minus(RingParticleArray[i-1].velocity);
 
         // if (distance > 2*RingParticleArray[i].connect){
             v2 F = dis.product(kr*(-2*RingParticleArray[i].connect + distance));
