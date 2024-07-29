@@ -74,8 +74,14 @@ void Ring::update_internal_force(){
         v2 dis=RingParticleArray[i].position.minus(RingParticleArray[i-1].position);
         double distance=dis.norm();
         dis.normalize();
+
+        v2 velocity_relative = RingParticleArray[i].velocity.minus(RingParticleArray[i].velocity);
+
         // if (distance > 2*RingParticleArray[i].connect){
             v2 F = dis.product(kr*(-2*RingParticleArray[i].connect + distance));
+
+
+            F = F.sum(dis.product(-1*damping_coefficient*(dis.dot(velocity_relative))));
             // if (i==1){
             //     std::cout<<"Acceleration: "<<F.norm()/RingParticleArray[i].mass<<std::endl;
             // }
