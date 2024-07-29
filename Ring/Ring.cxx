@@ -82,7 +82,7 @@ void Ring::update_internal_force(){
             
 
             F = F.sum(dis.product(-1*damping_coefficient*(dis.dot(velocity_relative))));
-            std::cout<<"Dampping_force:"<<dis.product(-1*damping_coefficient*(dis.dot(velocity_relative))).x<<" "dis.product(-1*damping_coefficient*(dis.dot(velocity_relative))).y<<std::endl;
+            std::cout<<"Dampping_force:"<<dis.product(-1*damping_coefficient*(dis.dot(velocity_relative))).x<<" "<<dis.product(-1*damping_coefficient*(dis.dot(velocity_relative))).y<<std::endl;
             // if (i==1){
             //     std::cout<<"Acceleration: "<<F.norm()/RingParticleArray[i].mass<<std::endl;
             // }
