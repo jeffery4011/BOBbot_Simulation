@@ -16,7 +16,7 @@ class Ring_particle: public Particle{
 class Ring {
     public:
     int n = 1000;
-    double damping_coefficient = 0.001;
+    double damping_coefficient = 0.0005;
     Ring_particle * RingParticleArray = new Ring_particle[n];
 
     void initialize(double ring_radius);
